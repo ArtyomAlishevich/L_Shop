@@ -1,0 +1,37 @@
+{
+  "baskets": [
+    {
+      "id": "1",
+      "userId": "1",
+      "count": 0,
+      "sum": 0,
+      "boardGames": []
+    },
+    {
+      "id": "33e2ac42-7984-4505-bb2d-c59753f1be88",
+      "userId": "e6654474-445e-4f71-9183-62171ea46e4f",
+      "sum": 250,
+      "count": 1,
+      "boardGames": [
+        {
+          "boardGameId": "2",
+          "count": 1,
+          "sum": 250
+        }
+      ]
+    },
+    {
+      "id": "d34a7c0f-420f-466b-998d-3c9af75278ff",
+      "userId": "1164af29-fd75-47fe-8d7d-64d4c40b8e42",
+      "sum": 240,
+      "count": 2,
+      "boardGames": [
+        {
+          "boardGameId": "1",
+          "count": 2,
+          "sum": 240
+        }
+      ]
+    }
+  ]
+}

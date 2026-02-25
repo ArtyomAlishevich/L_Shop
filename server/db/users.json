@@ -1,0 +1,25 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Нечай Дмитрий Иванович",
+      "password": "Bravlstarser_228",
+      "login": "dimanecaj51",
+      "createdAt": "16.02.2026"
+    },
+    {
+      "id": "e6654474-445e-4f71-9183-62171ea46e4f",
+      "name": "Егор Иванов",
+      "login": "Egor",
+      "password": "$2b$10$PBQ0oPv8WONcSMRgU4zuyuJxMtPn0szzfOLcLkuY8oDd6E5B//zi.",
+      "createdAt": "Wed Feb 18 2026 15:31:04 GMT+0300 (Москва, стандартное время)"
+    },
+    {
+      "id": "1164af29-fd75-47fe-8d7d-64d4c40b8e42",
+      "name": "Алеша Денай",
+      "login": "VseTop",
+      "password": "$2b$10$cmo23YFgTdH8fmIfZHm4KOPKi1vuU5O6deNyksQkavThvjWhexybu",
+      "createdAt": "Wed Feb 18 2026 15:32:30 GMT+0300 (Москва, стандартное время)"
+    }
+  ]
+}

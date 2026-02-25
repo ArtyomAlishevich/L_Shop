@@ -1,0 +1,62 @@
+{
+    "boardGames" : [
+        {
+        "id": "1",
+        "name": "Кладоискатели",
+        "categories": [
+                "Приключения", 
+                "Для любого возраста"
+            ],
+        "description": "Приключенческая игра для всей семьи",
+        "playersAmount": "3-5",
+        "isAvailable": true,
+        "price": 120,
+        "amount" : 34,
+        "images": {
+            "preview": "/images/games/klad.jpg",
+            "gallery": [
+                "/images/games/klad-1.jpg",
+                "/images/games/klad-2.jpg"
+            ]
+        },
+        "delivery": {
+            "startCountry": "Россия",
+            "startTown": "Москва",
+            "startStreet": "Пушкина",
+            "startHouseNumber": "42",
+            "closestDate": "2024-02-01T10:30:00.000Z",
+            "price": 10
+        }
+    },
+    {
+        "id": "2",
+        "name": "Цивилизация",
+        "categories": [
+            "Стратегия",
+            "Для взрослых"
+        ],
+        "description": "Стратегическая игра про развитие цивилизации",
+        "playersAmount": "2-4",
+        "isAvailable": true,
+        "price": 250,
+        "amount" : 732,
+        "images": {
+            "preview": "/images/games/civ.jpg",
+            "gallery": [
+                "/images/games/civ-1.jpg",
+                "/images/games/civ-2.jpg",
+                "/images/games/civ-3.jpg"
+                ]
+        },
+        "delivery": {
+            "startCountry": "Россия",
+            "startTown": "Москва",
+            "startStreet": "Ленина",
+            "startHouseNumber": "10",
+            "closestDate": "2024-02-01T10:30:00.000",
+            "price": 15
+        },
+        "discount": 10
+    }
+    ]
+}
