@@ -20,6 +20,13 @@
       "login": "VseTop",
       "password": "$2b$10$cmo23YFgTdH8fmIfZHm4KOPKi1vuU5O6deNyksQkavThvjWhexybu",
       "createdAt": "Wed Feb 18 2026 15:32:30 GMT+0300 (Москва, стандартное время)"
+    },
+    {
+      "id": "e47e3009-2017-47e8-a001-d9124168a9a4",
+      "name": "Егор Дедюля",
+      "login": "Test",
+      "password": "$2b$10$.8zzEtNAUpVMGieqU0zLYew/bs85Bag3hPK3cdBVLTww9bAvESXdm",
+      "createdAt": "26.02.2026"
     }
   ]
 }

@@ -1,13 +1,15 @@
 import { Router } from "express";
 import { BasketsController } from "../controllers/basketsController";
+import { authMiddleware } from "../middlewares/authMiddleware";
 
 const basketsRouter : Router = Router();
-basketsRouter.get('/user/:userId', BasketsController.get);
-basketsRouter.get('/user/:userId/count', BasketsController.getCount);
-basketsRouter.get('/user/:userId/sum', BasketsController.getSum);
-basketsRouter.post('/user/:userId/add', BasketsController.add);
-basketsRouter.post('/user/:userId/remove', BasketsController.remove);
-basketsRouter.post('/user/:userId/clear', BasketsController.clear);
-basketsRouter.post('/user/:userId/remove/allSimillar', BasketsController.removeAllSimilar);
+basketsRouter.use(authMiddleware);
+basketsRouter.get('/', BasketsController.get);
+basketsRouter.get('/count', BasketsController.getCount);
+basketsRouter.get('/sum', BasketsController.getSum);
+basketsRouter.post('/add', BasketsController.add);
+basketsRouter.post('/remove', BasketsController.remove);
+basketsRouter.post('/clear', BasketsController.clear);
+basketsRouter.post('/remove/allSimillar', BasketsController.removeAllSimilar);
 
 export default basketsRouter;
