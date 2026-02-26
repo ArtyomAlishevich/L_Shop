@@ -1,13 +1,11 @@
 import { Request, Response } from "express";
 import { NotFoundError } from "../types/notFoundError";
 import { BasketsService } from "../services/basketsService";
-import { DuplicateError } from "../types/duplicateError";
-import { IBasket } from "../types/iBasket";
 
 export class BasketsController {
     static get(req: Request, res: Response) : void{
         try {
-            const userId = req.params.userId;
+            const userId = req.session.userId;
             const basket = BasketsService.get(userId as string);
             res.status(200).json({ data: basket });
         } catch (error) {
@@ -24,7 +22,7 @@ export class BasketsController {
 
     static getCount(req: Request, res: Response) : void {
         try {
-            const userId = req.params.userId;
+            const userId = req.session.userId;
             const count = BasketsService.getCount(userId as string);
             res.status(200).json({ data: count });
         } catch (error) {
@@ -41,7 +39,7 @@ export class BasketsController {
 
     static getSum(req: Request, res: Response) : void {
         try {
-            const userId = req.params.userId;
+            const userId = req.session.userId;
             const sum = BasketsService.getSum(userId as string);
             res.status(200).json({ data: sum });
         } catch (error) {
@@ -59,7 +57,7 @@ export class BasketsController {
     static async add(req: Request, res: Response) : Promise<void> {
         try {
             const { boardGameId } = req.body;
-            const userId = req.params.userId as string;
+            const userId = req.session.userId as string;
 
             if (!boardGameId) {
                 res.status(400).json({ error: 'Ошибка при добавлении настольной игры в корзину: id настольной игры обязательно' });
@@ -88,7 +86,7 @@ export class BasketsController {
     static async remove(req: Request, res: Response) : Promise<void> {
         try {
             const { boardGameId } = req.body;
-            const userId = req.params.userId as string;
+            const userId = req.session.userId;
 
             if (!boardGameId) {
                 res.status(400).json({ error: 'Ошибка при удалении настольной игры из корзины: id настольной игры обязательно' });
@@ -100,7 +98,7 @@ export class BasketsController {
                 return;
             }
             
-            const basket = await BasketsService.remove(boardGameId, userId);
+            const basket = await BasketsService.remove(boardGameId, userId as string);
             res.status(200).json({ data: basket });
         } catch (error) {
             console.log(`Ошибка при удалении настольной игры из корзины: ` + (error as Error).message)
@@ -116,8 +114,8 @@ export class BasketsController {
 
     static async clear(req: Request, res: Response) : Promise<void> {
         try {
-            const userId = req.params.userId as string;
-            const basket = await BasketsService.clear(userId);
+            const userId = req.session.userId;
+            const basket = await BasketsService.clear(userId as string);
             res.status(200).json({ data: basket });
         } catch (error) {
             console.log(`Ошибка при очистке корзины: ` + (error as Error).message)
@@ -133,7 +131,7 @@ export class BasketsController {
 
     static async removeAllSimilar(req: Request, res: Response) : Promise<void> {
         try {
-            const userId = req.params.userId as string;
+            const userId = req.session.userId;
             const { boardGameId } = req.body;
 
             if (!boardGameId) {
@@ -146,7 +144,7 @@ export class BasketsController {
                 return;
             }
 
-            const basket = await BasketsService.removeAllSimilar(userId, boardGameId);
+            const basket = await BasketsService.removeAllSimilar(userId as string, boardGameId);
             res.status(200).json({ data: basket });
         } catch (error) {
             console.log(`Ошибка при удалении набора одинаковых настольных игр из корзины: ` + (error as Error).message)

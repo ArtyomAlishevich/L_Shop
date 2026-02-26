@@ -31,7 +31,7 @@ export class AuthController {
                 createdAt: user.createdAt,
                 name: user.name
             }
-
+            req.session.userId = user.id;
             res.status(201).json({ newUser: newUser });
         }
         catch (error) {
@@ -63,9 +63,9 @@ export class AuthController {
                 password: password
             }
 
-            if (await AuthService.login(veryfyingUser)) {
-                res.status(200).send();
-            }
+            const user = await AuthService.login(veryfyingUser);
+            req.session.userId = user.id;
+            res.status(200).send();
         } catch (error) {
             console.log((error as Error).message);
             if (error instanceof UnauthorizedError) {
