@@ -35,17 +35,17 @@ export class AuthController {
             res.status(201).json({ newUser: newUser });
         }
         catch (error) {
-            console.log((error as Error).message);          
+            console.log('Ошибка регистрации пользователя: ' + (error as Error).message);          
             if (error instanceof DuplicateError) {
-                res.status(409).json({ error: error.message });
+                res.status(409).json({ error: 'Ошибка регистрации пользователя: ' + error.message });
                 return;
             }
 
-            res.status(500).json({ error: (error as Error).message });
+            res.status(500).json({ error: 'Ошибка регистрации пользователя: ' + (error as Error).message });
         }
     }
 
-    static async login(req: Request, res: Response) {
+    static async login(req: Request, res: Response) : Promise<void> {
         try {
             const { login, password } = req.body;
             if (!login || !password) {
@@ -67,13 +67,37 @@ export class AuthController {
             req.session.userId = user.id;
             res.status(200).send();
         } catch (error) {
-            console.log((error as Error).message);
+            console.log('Ошибка авторизации пользователя: ' + (error as Error).message);
             if (error instanceof UnauthorizedError) {
-                res.status(401).json({ error: error.message });
+                res.status(401).json({ error: 'Ошибка авторизации пользователя: ' + error.message });
                 return;
             }
 
-            res.status(500).json({ error: (error as Error).message });
+            res.status(500).json({ error: 'Ошибка авторизации пользователя:' + (error as Error).message });
+        }
+    }
+
+    static logout(req: Request, res: Response) : void {
+        try {
+            const userId = req.session?.userId;
+            req.session.destroy((err) => {
+                if (err) {
+                    console.log(`Ошибка уничтожении сессии при выходе из системы: ${err}`);
+                    res.status(500).json({ error: 'Ошибка уничтожении сессии при выходе из системы: ' + err });
+                }
+
+                res.clearCookie('shop.session', {
+                    httpOnly: true,
+                    secure: false,
+                    sameSite: 'lax'
+                });
+
+                console.log(`Пользователь ${userId} вышел из системы`);
+                res.status(200).json({ message: `Пользователь ${userId} вышел из системы` });
+            });
+        } catch (error) {
+            console.log(`Ошибка при выходе пользователя из системы: ` + (error as Error).message);
+            res.status(500).json({ error: `Ошибка при выходе пользователя из системы: ` + (error as Error).message });
         }
     }
 }
