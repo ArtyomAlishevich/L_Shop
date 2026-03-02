@@ -8,7 +8,8 @@
                 "Для любого возраста"
             ],
         "description": "Приключенческая игра для всей семьи",
-        "playersAmount": "3-5",
+        "minPlayers": 3,
+        "maxPlayers": 5,
         "isAvailable": true,
         "price": 120,
         "amount" : 34,
@@ -36,7 +37,8 @@
             "Для взрослых"
         ],
         "description": "Стратегическая игра про развитие цивилизации",
-        "playersAmount": "2-4",
+        "minPlayers": 2,
+        "maxPlayers": 4,
         "isAvailable": true,
         "price": 250,
         "amount" : 732,
