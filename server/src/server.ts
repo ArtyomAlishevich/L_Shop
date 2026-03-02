@@ -4,6 +4,7 @@ import boardGamesRouter from './routers/boardGamesRouter';
 import basketsRouter from './routers/basketsRouter';
 import session from 'express-session';
 import dotenv from 'dotenv';
+import deliveryRouter from './routers/deliveryRouter';
 
 dotenv.config();
 const app: Application = express();
@@ -22,7 +23,7 @@ app.use(express.json());
 app.use('/api/boardGames', boardGamesRouter);
 app.use('/api/auth', authRouter);
 app.use('/api/basket', basketsRouter);
-
+app.use('/api/delivery', deliveryRouter);
 app.listen(PORT, () => {
     console.log('Сервер запущен');
 });
