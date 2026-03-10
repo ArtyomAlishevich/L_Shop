@@ -5,6 +5,7 @@ import basketsRouter from './routers/basketsRouter';
 import session from 'express-session';
 import dotenv from 'dotenv';
 import deliveryRouter from './routers/deliveryRouter';
+import path from 'path'; 
 
 dotenv.config();
 const app: Application = express();
@@ -20,6 +21,7 @@ app.use(session({
     }
 }));
 app.use(express.json());
+app.use('/images', express.static(path.join(__dirname, '../db/images')));
 app.use('/api/boardGames', boardGamesRouter);
 app.use('/api/auth', authRouter);
 app.use('/api/basket', basketsRouter);
