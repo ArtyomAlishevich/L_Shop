@@ -160,6 +160,180 @@
       "totalOrderSum": 130,
       "createdAt": "2026-02-27T08:01:27.736Z",
       "status": "created"
+    },
+    {
+      "id": "c71c7cb7-39d7-49a3-85ef-f70abf523f18",
+      "userId": "fdda1fee-0a98-47ac-a1d0-b8c82395759d",
+      "contact": {
+        "phone": "12345678976",
+        "email": "123uhiygiyugitfyfrtdftfytvyut45@gmail.com"
+      },
+      "address": {
+        "country": "Беларусь",
+        "city": "Минск",
+        "street": "Ыпваивива",
+        "house": "01",
+        "apartment": "11"
+      },
+      "paymentMethod": "cash",
+      "items": [
+        {
+          "boardGameId": "1",
+          "count": 9,
+          "price": 120,
+          "delivery": {
+            "startCountry": "Россия",
+            "startTown": "Москва",
+            "startStreet": "Пушкина",
+            "startHouseNumber": "42",
+            "closestDate": "2024-02-01T10:30:00.000Z",
+            "price": 10
+          }
+        },
+        {
+          "boardGameId": "2",
+          "count": 8,
+          "price": 250,
+          "delivery": {
+            "startCountry": "Россия",
+            "startTown": "Москва",
+            "startStreet": "Ленина",
+            "startHouseNumber": "10",
+            "closestDate": "2024-02-01T10:30:00.000",
+            "price": 15
+          }
+        }
+      ],
+      "totalCount": 17,
+      "totalSum": 3080,
+      "totalDeliverySum": 210,
+      "totalOrderSum": 3290,
+      "createdAt": "2026-03-12T05:34:50.843Z",
+      "status": "created"
+    },
+    {
+      "id": "25113a6f-5008-48c8-9ac4-6cf6f80aac0c",
+      "userId": "30bcda09-05e6-4006-98b3-1017d3582e0b",
+      "contact": {
+        "phone": "123232",
+        "email": "qweew@gma"
+      },
+      "address": {
+        "country": "ывывмывммыв",
+        "city": "ывмывмывм",
+        "street": "мымывывм",
+        "house": "1",
+        "apartment": "1"
+      },
+      "paymentMethod": "cash",
+      "items": [
+        {
+          "boardGameId": "1",
+          "count": 1,
+          "price": 120,
+          "delivery": {
+            "startCountry": "Россия",
+            "startTown": "Москва",
+            "startStreet": "Пушкина",
+            "startHouseNumber": "42",
+            "closestDate": "2024-02-01T10:30:00.000Z",
+            "price": 10
+          }
+        }
+      ],
+      "totalCount": 1,
+      "totalSum": 120,
+      "totalDeliverySum": 10,
+      "totalOrderSum": 130,
+      "createdAt": "2026-03-12T06:03:56.666Z",
+      "status": "created"
+    },
+    {
+      "id": "834bd9ac-9863-4829-b545-581bec8d6a3d",
+      "userId": "30bcda09-05e6-4006-98b3-1017d3582e0b",
+      "contact": {
+        "phone": "ssvsdvs",
+        "email": "svsdvsd@fgs"
+      },
+      "address": {
+        "country": "svsvsdvsvs",
+        "city": "svsvsvs",
+        "street": "svsdvsdvsddd",
+        "house": "1111",
+        "apartment": "11111"
+      },
+      "paymentMethod": "card",
+      "items": [
+        {
+          "boardGameId": "1",
+          "count": 11,
+          "price": 120,
+          "delivery": {
+            "startCountry": "Россия",
+            "startTown": "Москва",
+            "startStreet": "Пушкина",
+            "startHouseNumber": "42",
+            "closestDate": "2024-02-01T10:30:00.000Z",
+            "price": 10
+          }
+        }
+      ],
+      "totalCount": 11,
+      "totalSum": 1320,
+      "totalDeliverySum": 110,
+      "totalOrderSum": 1430,
+      "createdAt": "2026-03-12T06:19:28.170Z",
+      "status": "created"
+    },
+    {
+      "id": "b3e52fa0-faf5-44d3-a8e6-513c838370fc",
+      "userId": "30bcda09-05e6-4006-98b3-1017d3582e0b",
+      "contact": {
+        "phone": "12345678765432",
+        "email": "1@1"
+      },
+      "address": {
+        "country": "Беларусь",
+        "city": "zjzdjd",
+        "street": "zddndg",
+        "house": "1234543",
+        "apartment": "2345"
+      },
+      "paymentMethod": "card",
+      "items": [
+        {
+          "boardGameId": "1",
+          "count": 9,
+          "price": 120,
+          "delivery": {
+            "startCountry": "Россия",
+            "startTown": "Москва",
+            "startStreet": "Пушкина",
+            "startHouseNumber": "42",
+            "closestDate": "2024-02-01T10:30:00.000Z",
+            "price": 10
+          }
+        },
+        {
+          "boardGameId": "2",
+          "count": 17,
+          "price": 250,
+          "delivery": {
+            "startCountry": "Россия",
+            "startTown": "Москва",
+            "startStreet": "Ленина",
+            "startHouseNumber": "10",
+            "closestDate": "2024-02-01T10:30:00.000",
+            "price": 15
+          }
+        }
+      ],
+      "totalCount": 26,
+      "totalSum": 5330,
+      "totalDeliverySum": 345,
+      "totalOrderSum": 5675,
+      "createdAt": "2026-03-12T06:52:36.346Z",
+      "status": "created"
     }
   ]
 }

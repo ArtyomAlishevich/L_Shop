@@ -17,7 +17,7 @@ export class AuthController {
             if (typeof login !== "string" || typeof password !== "string" || typeof name !== "string") {
                 res.status(400).send({ error: 'Ошибка регистрации пользователя: логин, пароль и имя пользователя должны быть строками' });
                 return;
-            }   
+            }
 
             const newUserData : IUserRequestDTO = {
                 login: login,
@@ -35,7 +35,7 @@ export class AuthController {
             res.status(201).json({ newUser: newUser });
         }
         catch (error) {
-            console.log('Ошибка регистрации пользователя: ' + (error as Error).message);          
+            console.log('Ошибка регистрации пользователя: ' + (error as Error).message);
             if (error instanceof DuplicateError) {
                 res.status(409).json({ error: 'Ошибка регистрации пользователя: ' + error.message });
                 return;
@@ -58,14 +58,22 @@ export class AuthController {
                 return;
             }
 
-            const veryfyingUser : IUserRequestDTO = {
+            const verifyingUser : IUserRequestDTO = {
                 login: login,
                 password: password
             }
 
-            const user = await AuthService.login(veryfyingUser);
+            const user = await AuthService.login(verifyingUser);
             req.session.userId = user.id;
-            res.status(200).send();
+
+            res.status(200).json({
+                user: {
+                    id: user.id,
+                    login: user.login,
+                    name: user.name,
+                    createdAt: user.createdAt
+                }
+            });
         } catch (error) {
             console.log('Ошибка авторизации пользователя: ' + (error as Error).message);
             if (error instanceof UnauthorizedError) {

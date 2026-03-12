@@ -1,3 +1,4 @@
+
 import { IBoardGame } from '../src/types/iBoardGame';
 import data from './boardGames.json';
 
