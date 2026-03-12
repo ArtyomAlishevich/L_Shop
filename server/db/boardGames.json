@@ -16,10 +16,10 @@
         "price": 120,
         "amount" : 34,
         "images": {
-            "preview": "/images/games/klad.jpg",
+            "preview": "/images/klad.jpg",
             "gallery": [
-                "/images/games/klad-1.jpg",
-                "/images/games/klad-2.jpg"
+                "/images/klad-1.jpg",
+                "/images/klad-2.jpg"
             ]
         },
         "delivery": {
@@ -45,10 +45,10 @@
         "price": 250,
         "amount" : 732,
         "images": {
-            "preview": "/images/games/civ.jpg",
+            "preview": "/images/civ.jpg",
             "gallery": [
-                "/images/games/civ-1.jpg",
-                "/images/games/civ-2.jpg"
+                "/images/civ-1.jpg",
+                "/images/civ-2.jpg"
                 ]
         },
         "delivery": {
@@ -76,10 +76,10 @@
     "price": 85,
     "amount": 43,
     "images": {
-        "preview": "/images/games/mafia.jpg",
+        "preview": "/images/mafia.jpg",
         "gallery": [
-            "/images/games/mafia-1.jpg",
-            "/images/games/mafia-2.jpg"
+            "/images/mafia-1.jpg",
+            "/images/mafia-2.jpg"
         ]
     },
     "delivery": {
@@ -107,10 +107,10 @@
     "price": 55,
     "amount": 88,
     "images": {
-        "preview": "/images/games/danetki.jpg",
+        "preview": "/images/danetki.jpg",
         "gallery": [
-            "/images/games/danetki-1.jpg",
-            "/images/games/danetki-2.jpg"
+            "/images/danetki-1.jpg",
+            "/images/danetki-2.jpg"
         ]
     },
     "delivery": {
@@ -138,9 +138,9 @@
     "price": 95,
     "amount": 27,
     "images": {
-        "preview": "/images/games/balance.jpg",
+        "preview": "/images/balance.jpg",
         "gallery": [
-            "/images/games/balance-1.jpg"
+            "/images/balance-1.jpg"
         ]
     },
     "delivery": {
@@ -168,10 +168,10 @@
     "price": 145,
     "amount": 42,
     "images": {
-        "preview": "/images/games/jenga.jpg",
+        "preview": "/images/jenga.jpg",
         "gallery": [
-            "/images/games/jenga-1.jpg",
-            "/images/games/jenga-2.jpg"
+            "/images/jenga-1.jpg",
+            "/images/jenga-2.jpg"
         ]
     },
     "delivery": {
@@ -200,9 +200,9 @@
     "price": 210,
     "amount": 56,
     "images": {
-        "preview": "/images/games/chess.jpg",
+        "preview": "/images/chess.jpg",
         "gallery": [
-            "/images/games/chess-1.jpg"
+            "/images/chess-1.jpg"
         ]
     },
     "delivery": {
@@ -231,9 +231,9 @@
     "price": 135,
     "amount": 48,
     "images": {
-        "preview": "/images/games/checkers.jpg",
+        "preview": "/images/checkers.jpg",
         "gallery": [
-            "/images/games/checkers-1.jpg"
+            "/images/checkers-1.jpg"
         ]
     },
     "delivery": {
@@ -261,10 +261,10 @@
     "price": 75,
     "amount": 93,
     "images": {
-        "preview": "/images/games/uno.jpg",
+        "preview": "/images/uno.jpg",
         "gallery": [
-            "/images/games/uno-1.jpg",
-            "/images/games/uno-2.jpg"
+            "/images/uno-1.jpg",
+            "/images/uno-2.jpg"
         ]
     },
     "delivery": {
