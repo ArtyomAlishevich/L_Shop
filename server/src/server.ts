@@ -5,11 +5,23 @@ import basketsRouter from './routers/basketsRouter';
 import session from 'express-session';
 import dotenv from 'dotenv';
 import deliveryRouter from './routers/deliveryRouter';
-import path from 'path'; 
+import path from 'path';
+import cors from 'cors';
 
 dotenv.config();
 const app: Application = express();
 const PORT = 3000;
+
+app.use(cors({
+    origin: 'http://localhost:5173',
+    credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization']
+}));
+
+
+
+
 app.use(session({
     secret: process.env.SESSION_SECRET!,
     resave: false,
@@ -21,11 +33,23 @@ app.use(session({
     }
 }));
 app.use(express.json());
+
+app.use(express.static(path.join(__dirname, '..', '..', 'client')));
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, '..', '..', 'client/index.html'));
+});
+
+app.use('/api/boardgames', boardGamesRouter);
 app.use('/images', express.static(path.join(__dirname, '../db/images')));
 app.use('/api/boardGames', boardGamesRouter);
 app.use('/api/auth', authRouter);
-app.use('/api/basket', basketsRouter);
+app.use('/api/baskets', basketsRouter);
 app.use('/api/delivery', deliveryRouter);
+
+
+
+
+
 app.listen(PORT, () => {
     console.log('Сервер запущен');
 });
