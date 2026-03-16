@@ -43,15 +43,9 @@
     {
       "id": "63037027-5872-466b-a4f8-58824e45471c",
       "userId": "30bcda09-05e6-4006-98b3-1017d3582e0b",
-      "count": 1,
-      "sum": 250,
-      "boardGames": [
-        {
-          "boardGameId": "2",
-          "count": 1,
-          "sum": 250
-        }
-      ]
+      "count": 0,
+      "sum": 0,
+      "boardGames": []
     },
     {
       "id": "93a0b743-a6b3-4fe1-998a-bf2c03c42053",

@@ -85,4 +85,12 @@ export class DeliveryService {
             throw error;
         }
     }
+
+    static async getById(id: string): Promise<IDelivery | undefined> {
+        try {
+            return await DeliveryDatabase.getById(id);
+        } catch (error) {
+            throw error;
+        }
+    }
 }

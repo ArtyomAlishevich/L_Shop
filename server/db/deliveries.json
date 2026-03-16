@@ -334,6 +334,315 @@
       "totalOrderSum": 5675,
       "createdAt": "2026-03-12T06:52:36.346Z",
       "status": "created"
+    },
+    {
+      "id": "d2bf732d-33fb-4e2f-85de-bd96abc9b337",
+      "userId": "30bcda09-05e6-4006-98b3-1017d3582e0b",
+      "contact": {
+        "phone": "12345678765432",
+        "email": "1@1"
+      },
+      "address": {
+        "country": "Беларусь",
+        "city": "zjzdjd",
+        "street": "zddndg",
+        "house": "1234543",
+        "apartment": "2345"
+      },
+      "paymentMethod": "card",
+      "items": [
+        {
+          "boardGameId": "2",
+          "count": 1,
+          "price": 250,
+          "delivery": {
+            "startCountry": "Россия",
+            "startTown": "Москва",
+            "startStreet": "Ленина",
+            "startHouseNumber": "10",
+            "closestDate": "2024-02-01T10:30:00.000",
+            "price": 15
+          }
+        }
+      ],
+      "totalCount": 1,
+      "totalSum": 250,
+      "totalDeliverySum": 15,
+      "totalOrderSum": 265,
+      "createdAt": "2026-03-16T05:21:30.542Z",
+      "status": "created"
+    },
+    {
+      "id": "28d41e75-1aee-4e45-8baf-a9bb9d2ba01d",
+      "userId": "30bcda09-05e6-4006-98b3-1017d3582e0b",
+      "contact": {
+        "phone": "12345678765432",
+        "email": "1@1"
+      },
+      "address": {
+        "country": "Беларусь",
+        "city": "zjzdjd",
+        "street": "zddndg",
+        "house": "1234543",
+        "apartment": "2345"
+      },
+      "paymentMethod": "card",
+      "items": [
+        {
+          "boardGameId": "2",
+          "count": 1,
+          "price": 250,
+          "delivery": {
+            "startCountry": "Россия",
+            "startTown": "Москва",
+            "startStreet": "Ленина",
+            "startHouseNumber": "10",
+            "closestDate": "2024-02-01T10:30:00.000",
+            "price": 15
+          }
+        }
+      ],
+      "totalCount": 1,
+      "totalSum": 250,
+      "totalDeliverySum": 15,
+      "totalOrderSum": 265,
+      "createdAt": "2026-03-16T05:23:26.364Z",
+      "status": "created"
+    },
+    {
+      "id": "ba74476c-5746-4330-98d3-7803caaa4a1c",
+      "userId": "30bcda09-05e6-4006-98b3-1017d3582e0b",
+      "contact": {
+        "phone": "12345678765432",
+        "email": "1@1"
+      },
+      "address": {
+        "country": "Беларусь",
+        "city": "zjzdjd",
+        "street": "zddndg",
+        "house": "1234543",
+        "apartment": "2345"
+      },
+      "paymentMethod": "card",
+      "items": [
+        {
+          "boardGameId": "14",
+          "count": 1,
+          "price": 145,
+          "delivery": {
+            "startCountry": "Россия",
+            "startTown": "Москва",
+            "startStreet": "Профсоюзная",
+            "startHouseNumber": "61",
+            "closestDate": "2024-02-04T11:30:00.000Z",
+            "price": 12
+          }
+        },
+        {
+          "boardGameId": "4",
+          "count": 2,
+          "price": 85,
+          "delivery": {
+            "startCountry": "Россия",
+            "startTown": "Москва",
+            "startStreet": "Тверская",
+            "startHouseNumber": "5",
+            "closestDate": "2024-02-02T14:20:00.000Z",
+            "price": 10
+          }
+        }
+      ],
+      "totalCount": 3,
+      "totalSum": 315,
+      "totalDeliverySum": 32,
+      "totalOrderSum": 347,
+      "createdAt": "2026-03-16T05:25:40.871Z",
+      "status": "created"
+    },
+    {
+      "id": "004e8cf4-2832-4a32-a9c0-68a366b3d6da",
+      "userId": "30bcda09-05e6-4006-98b3-1017d3582e0b",
+      "contact": {
+        "phone": "12345678765432",
+        "email": "1@1"
+      },
+      "address": {
+        "country": "Беларусь",
+        "city": "zjzdjd",
+        "street": "zddndg",
+        "house": "1234543",
+        "apartment": "2345"
+      },
+      "paymentMethod": "card",
+      "items": [
+        {
+          "boardGameId": "14",
+          "count": 1,
+          "price": 145,
+          "delivery": {
+            "startCountry": "Россия",
+            "startTown": "Москва",
+            "startStreet": "Профсоюзная",
+            "startHouseNumber": "61",
+            "closestDate": "2024-02-04T11:30:00.000Z",
+            "price": 12
+          }
+        }
+      ],
+      "totalCount": 1,
+      "totalSum": 145,
+      "totalDeliverySum": 12,
+      "totalOrderSum": 157,
+      "createdAt": "2026-03-16T05:35:14.581Z",
+      "status": "created"
+    },
+    {
+      "id": "5da633bf-54f8-47f9-8171-9453d91e1155",
+      "userId": "30bcda09-05e6-4006-98b3-1017d3582e0b",
+      "contact": {
+        "phone": "12345678765432",
+        "email": "1@1"
+      },
+      "address": {
+        "country": "Беларусь",
+        "city": "zjzdjd",
+        "street": "zddndg",
+        "house": "1234543",
+        "apartment": "2345"
+      },
+      "paymentMethod": "card",
+      "items": [
+        {
+          "boardGameId": "2",
+          "count": 1,
+          "price": 250,
+          "delivery": {
+            "startCountry": "Россия",
+            "startTown": "Москва",
+            "startStreet": "Ленина",
+            "startHouseNumber": "10",
+            "closestDate": "2024-02-01T10:30:00.000",
+            "price": 15
+          }
+        }
+      ],
+      "totalCount": 1,
+      "totalSum": 250,
+      "totalDeliverySum": 15,
+      "totalOrderSum": 265,
+      "createdAt": "2026-03-16T05:56:20.006Z",
+      "status": "created"
+    },
+    {
+      "id": "89ff3801-4aef-4931-b76f-ba87b828c7aa",
+      "userId": "30bcda09-05e6-4006-98b3-1017d3582e0b",
+      "contact": {
+        "phone": "12345678765432",
+        "email": "1@1"
+      },
+      "address": {
+        "country": "Беларусь",
+        "city": "zjzdjd",
+        "street": "zddndg",
+        "house": "1234543",
+        "apartment": "2345"
+      },
+      "paymentMethod": "card",
+      "items": [
+        {
+          "boardGameId": "2",
+          "count": 1,
+          "price": 250,
+          "delivery": {
+            "startCountry": "Россия",
+            "startTown": "Москва",
+            "startStreet": "Ленина",
+            "startHouseNumber": "10",
+            "closestDate": "2024-02-01T10:30:00.000",
+            "price": 15
+          }
+        }
+      ],
+      "totalCount": 1,
+      "totalSum": 250,
+      "totalDeliverySum": 15,
+      "totalOrderSum": 265,
+      "createdAt": "2026-03-16T06:02:57.450Z",
+      "status": "created"
+    },
+    {
+      "id": "ec754a06-3061-4bfa-905d-955feaeecf01",
+      "userId": "30bcda09-05e6-4006-98b3-1017d3582e0b",
+      "contact": {
+        "phone": "12345678765432",
+        "email": "1@1"
+      },
+      "address": {
+        "country": "Беларусь",
+        "city": "zjzdjd",
+        "street": "zddndg",
+        "house": "1234543",
+        "apartment": "2345"
+      },
+      "paymentMethod": "card",
+      "items": [
+        {
+          "boardGameId": "2",
+          "count": 1,
+          "price": 250,
+          "delivery": {
+            "startCountry": "Россия",
+            "startTown": "Москва",
+            "startStreet": "Ленина",
+            "startHouseNumber": "10",
+            "closestDate": "2024-02-01T10:30:00.000",
+            "price": 15
+          }
+        }
+      ],
+      "totalCount": 1,
+      "totalSum": 250,
+      "totalDeliverySum": 15,
+      "totalOrderSum": 265,
+      "createdAt": "2026-03-16T06:07:52.433Z",
+      "status": "created"
+    },
+    {
+      "id": "f366f8aa-86d8-4428-96ea-a1ad8bc6c525",
+      "userId": "30bcda09-05e6-4006-98b3-1017d3582e0b",
+      "contact": {
+        "phone": "12345678765432",
+        "email": "1@1"
+      },
+      "address": {
+        "country": "Беларусь",
+        "city": "zjzdjd",
+        "street": "zddndg",
+        "house": "1234543",
+        "apartment": "2345"
+      },
+      "paymentMethod": "card",
+      "items": [
+        {
+          "boardGameId": "4",
+          "count": 1,
+          "price": 85,
+          "delivery": {
+            "startCountry": "Россия",
+            "startTown": "Москва",
+            "startStreet": "Тверская",
+            "startHouseNumber": "5",
+            "closestDate": "2024-02-02T14:20:00.000Z",
+            "price": 10
+          }
+        }
+      ],
+      "totalCount": 1,
+      "totalSum": 85,
+      "totalDeliverySum": 10,
+      "totalOrderSum": 95,
+      "createdAt": "2026-03-16T06:15:15.301Z",
+      "status": "created"
     }
   ]
 }

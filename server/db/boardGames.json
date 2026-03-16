@@ -45,7 +45,7 @@
         "price": 250,
         "amount" : 732,
         "images": {
-            "preview": "/images/games/civ.jpg",
+            "preview": "/images/civ.jpg",
             "gallery": [
                 "/images/games/civ-1.jpg",
                 "/images/games/civ-2.jpg"
