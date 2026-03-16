@@ -45,7 +45,7 @@ export const DeliveryPage: React.FC = () => {
         try {
             const delivery = await deliveryApi.create(formData);
             await clearBasket();
-            navigate('/profile/orders', { state: { delivery } });
+            navigate(`/tracking/${delivery.id}`);
         } catch (err: any) {
             setError(err.response?.data?.error || 'Ошибка при оформлении заказа');
         } finally {
