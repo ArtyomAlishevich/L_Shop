@@ -2,10 +2,27 @@ import React, { useState } from 'react';
 import { GamesQueryParams } from '../../api/boardGames';
 import './GameFilters.css';
 
+/**
+ * Props для компонента GameFilters
+ */
 interface GameFiltersProps {
+     /** Функция, вызываемая при изменении фильтров */
     onFilterChange: (params: GamesQueryParams) => void;
 }
 
+/**
+ * Компонент формы фильтрации игр.
+ * 
+ * Позволяет пользователю фильтровать игры по различным критериям:
+ * поиск, категория, цена, количество игроков, наличие.
+ * 
+ * @component
+ * @param {GameFiltersProps} props - Свойства компонента
+ * @returns {JSX.Element} Форма фильтрации
+ * 
+ * @example
+ * <GameFilters onFilterChange={(params) => setParams(params)} />
+ */
 export const GameFilters: React.FC<GameFiltersProps> = ({ onFilterChange }) => {
     const [search, setSearch] = useState('');
     const [category, setCategory] = useState('');
@@ -16,6 +33,12 @@ export const GameFilters: React.FC<GameFiltersProps> = ({ onFilterChange }) => {
     const [sort, setSort] = useState<'asc' | 'desc' | ''>('');
     const [isAvailable, setIsAvailable] = useState('');
 
+    /**
+     * Обработчик отправки формы.
+     * Собирает все непустые поля в объект параметров и передает родителю.
+     * 
+     * @param {React.FormEvent} e - Событие отправки формы
+     */
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         const params: GamesQueryParams = {};
@@ -32,6 +55,9 @@ export const GameFilters: React.FC<GameFiltersProps> = ({ onFilterChange }) => {
         onFilterChange(params);
     };
 
+    /**
+     * Сбрасывает все фильтры к значениям по умолчанию.
+     */
     const handleReset = () => {
         setSearch('');
         setCategory('');

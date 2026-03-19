@@ -5,6 +5,18 @@ import { useBoardGames } from '../hooks/useBoardGames';
 import { BasketItem } from '../components/basket/BasketItem';
 import './BasketPage.css';
 
+/**
+ * Страница корзины.
+ * 
+ * Отображает список товаров в корзине, итоговую сумму и
+ * предоставляет возможность очистки корзины и перехода к оформлению.
+ * 
+ * @component
+ * @returns {JSX.Element} Страница корзины
+ * 
+ * @example
+ * <BasketPage />
+ */
 export const BasketPage: React.FC = () => {
     const { basket, isLoading, count, sum, clearBasket } = useBasket();
     const { games } = useBoardGames();
@@ -25,11 +37,21 @@ export const BasketPage: React.FC = () => {
         );
     }
 
+    /**
+     * Получает название игры по её ID.
+     * @param {string} gameId - ID игры
+     * @returns {string} Название игры или "Неизвестная игра"
+     */
     const getGameName = (gameId: string) => {
         const game = games.find(g => g.id === gameId);
         return game?.name || 'Неизвестная игра';
     };
 
+     /**
+     * Получает цену игры по её ID.
+     * @param {string} gameId - ID игры
+     * @returns {number} Цена игры или 0
+     */
     const getGamePrice = (gameId: string) => {
         const game = games.find(g => g.id === gameId);
         return game?.price || 0;

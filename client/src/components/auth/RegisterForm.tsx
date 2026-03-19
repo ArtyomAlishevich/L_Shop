@@ -3,6 +3,18 @@ import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../hooks/useAuth';
 import './AuthForms.css';
 
+/**
+ * Компонент формы регистрации.
+ * 
+ * Предоставляет поля для ввода имени, логина, пароля и подтверждения.
+ * Проверяет совпадение паролей и обрабатывает отправку.
+ * 
+ * @component
+ * @returns {JSX.Element} Форма регистрации
+ * 
+ * @example
+ * <RegisterForm />
+ */
 export const RegisterForm: React.FC = () => {
     const [name, setName] = useState('');
     const [login, setLogin] = useState('');
@@ -13,6 +25,11 @@ export const RegisterForm: React.FC = () => {
     const { register } = useAuth();
     const navigate = useNavigate();
 
+    /**
+     * Обработчик отправки формы.
+     * Проверяет совпадение паролей перед отправкой.
+     * @param {React.FormEvent} e - Событие отправки
+     */
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setError('');

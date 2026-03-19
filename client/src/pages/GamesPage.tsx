@@ -4,6 +4,18 @@ import { GameFilters } from '../components/games/GameFilters';
 import { useBoardGames } from '../hooks/useBoardGames';
 import './GamesPage.css';
 
+/**
+ * Страница каталога игр.
+ * 
+ * Отображает фильтры и список игр. Управляет загрузкой данных
+ * и отображением состояний загрузки/ошибки.
+ * 
+ * @component
+ * @returns {JSX.Element} Страница каталога
+ * 
+ * @example
+ * <GamesPage />
+ */
 export const GamesPage: React.FC = () => {
     const { games, isLoading, error, setParams } = useBoardGames();
 

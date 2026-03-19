@@ -6,6 +6,58 @@ import { UnauthorizedError } from "../types/unauthorizedError";
 import { IUserResponseDTO } from "../types/iUserResponse";
 
 export class AuthController {
+/**
+ * @openapi
+ * /auth/register:
+ *   post:
+ *     summary: Регистрация нового пользователя
+ *     tags: [Auth]
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             required:
+ *               - login
+ *               - password
+ *               - name
+ *             properties:
+ *               login:
+ *                 type: string
+ *                 example: ivan
+ *               password:
+ *                 type: string
+ *                 format: password
+ *                 example: secret123
+ *               name:
+ *                 type: string
+ *                 example: Иван
+ *     responses:
+ *       201:
+ *         description: Пользователь успешно создан
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 newUser:
+ *                   $ref: '#/components/schemas/User'
+ *       400:
+ *         description: Неверные входные данные
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/ErrorResponse'
+ *       409:
+ *         description: Пользователь с таким логином уже существует
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/ErrorResponse'
+ *       500:
+ *         description: Ошибка сервера
+ */
     static async register(req: Request, res: Response) : Promise<void> {
         try {
             const { login, password, name } = req.body;
@@ -45,6 +97,47 @@ export class AuthController {
         }
     }
 
+/**
+     * @openapi
+     * /auth/login:
+     *   post:
+     *     summary: Вход пользователя в систему
+     *     description: Аутентификация пользователя и создание сессии
+     *     tags: [Auth]
+     *     requestBody:
+     *       required: true
+     *       content:
+     *         application/json:
+     *           schema:
+     *             type: object
+     *             required:
+     *               - login
+     *               - password
+     *             properties:
+     *               login:
+     *                 type: string
+     *                 example: ivan123
+     *               password:
+     *                 type: string
+     *                 format: password
+     *                 example: secret123
+     *     responses:
+     *       200:
+     *         description: Успешный вход, устанавливается сессионная кука
+     *         content:
+     *           application/json:
+     *             schema:
+     *               type: object
+     *               properties:
+     *                 user:
+     *                   $ref: '#/components/schemas/User'
+     *       400:
+     *         description: Неверные входные данные
+     *       401:
+     *         description: Неверный логин или пароль
+     *       500:
+     *         description: Ошибка сервера
+     */
     static async login(req: Request, res: Response) : Promise<void> {
         try {
             const { login, password } = req.body;
@@ -85,6 +178,29 @@ export class AuthController {
         }
     }
 
+/**
+     * @openapi
+     * /auth/logout:
+     *   post:
+     *     summary: Выход пользователя из системы
+     *     description: Завершение сессии и удаление сессионной куки
+     *     tags: [Auth]
+     *     security:
+     *       - sessionCookie: []
+     *     responses:
+     *       200:
+     *         description: Успешный выход
+     *         content:
+     *           application/json:
+     *             schema:
+     *               type: object
+     *               properties:
+     *                 message:
+     *                   type: string
+     *                   example: Пользователь 123 вышел из системы
+     *       500:
+     *         description: Ошибка сервера
+     */
     static logout(req: Request, res: Response) : void {
         try {
             const userId = req.session?.userId;

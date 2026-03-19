@@ -4,11 +4,26 @@ import { useAuth } from '../../hooks/useAuth';
 import { useBasket } from '../../hooks/useBasket';
 import './Header.css';
 
+/**
+ * Компонент шапки сайта.
+ * 
+ * Отображает навигацию, логотип, ссылки на корзину и профиль.
+ * Меняет содержимое в зависимости от статуса аутентификации.
+ * 
+ * @component
+ * @returns {JSX.Element} Шапка сайта
+ * 
+ * @example
+ * <Header />
+ */
 export const Header: React.FC = () => {
     const { isAuthenticated, user, logout } = useAuth();
     const { count } = useBasket();
     const navigate = useNavigate();
 
+     /**
+     * Обработчик выхода из системы.
+     */
     const handleLogout = async () => {
         try {
             await logout();

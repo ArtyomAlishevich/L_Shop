@@ -2,6 +2,91 @@ import { Request, Response } from "express";
 import { BoardGamesService } from "../services/boardGamesService";
 
 export class BoardGamesController {
+    /**
+     * @openapi
+     * /boardGames:
+     *   get:
+     *     summary: Получить список всех настольных игр
+     *     description: Возвращает список игр с возможностью фильтрации и сортировки
+     *     tags: [BoardGames]
+     *     security: []
+     *     parameters:
+     *       - in: query
+     *         name: search
+     *         schema:
+     *           type: string
+     *         description: Поиск по названию (регистронезависимый, игнорирует пробелы)
+     *         example: "монополия"
+     *       - in: query
+     *         name: category
+     *         schema:
+     *           type: array
+     *           items:
+     *             type: string
+     *         style: form
+     *         explode: true
+     *         description: Фильтр по категориям (можно указать несколько, например ?category=стратегия&category=экономическая)
+     *       - in: query
+     *         name: isAvailable
+     *         schema:
+     *           type: string
+     *           enum: [true, false]
+     *         description: Фильтр по наличию (true - в наличии, false - нет в наличии)
+     *       - in: query
+     *         name: minPrice
+     *         schema:
+     *           type: integer
+     *           minimum: 0
+     *         description: Минимальная цена (целое положительное число)
+     *         example: 1000
+     *       - in: query
+     *         name: maxPrice
+     *         schema:
+     *           type: integer
+     *           minimum: 0
+     *         description: Максимальная цена (целое положительное число)
+     *         example: 5000
+     *       - in: query
+     *         name: minPlayers
+     *         schema:
+     *           type: integer
+     *           minimum: 1
+     *         description: Минимальное количество игроков
+     *         example: 2
+     *       - in: query
+     *         name: maxPlayers
+     *         schema:
+     *           type: integer
+     *           minimum: 1
+     *         description: Максимальное количество игроков
+     *         example: 6
+     *       - in: query
+     *         name: sort
+     *         schema:
+     *           type: string
+     *           enum: [asc, desc]
+     *         description: Сортировка по цене (asc - по возрастанию, desc - по убыванию)
+     *     responses:
+     *       200:
+     *         description: Список игр
+     *         content:
+     *           application/json:
+     *             schema:
+     *               type: object
+     *               properties:
+     *                 data:
+     *                   type: array
+     *                   items:
+     *                     $ref: '#/components/schemas/BoardGame'
+     *       400:
+     *         description: Ошибка в параметрах запроса
+     *         content:
+     *           application/json:
+     *             schema:
+     *               $ref: '#/components/schemas/ErrorResponse'
+     *       500:
+     *         description: Ошибка сервера
+     */
     static getAll(req: Request, res: Response) : void {
         try {
             const {

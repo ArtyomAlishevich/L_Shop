@@ -5,6 +5,18 @@ import { useBasket } from '../hooks/useBasket';
 import { deliveryApi } from '../api/delivery';
 import './DeliveryPage.css';
 
+/**
+ * Страница оформления доставки.
+ * 
+ * Содержит форму для ввода контактных данных и адреса доставки.
+ * Перенаправляет на страницу отслеживания после успешного создания заказа.
+ * 
+ * @component
+ * @returns {JSX.Element} Страница оформления заказа
+ * 
+ * @example
+ * <DeliveryPage />
+ */
 export const DeliveryPage: React.FC = () => {
     const { isAuthenticated } = useAuth();
     const { basket, clearBasket } = useBasket();
@@ -32,11 +44,20 @@ export const DeliveryPage: React.FC = () => {
         }
     }, [isAuthenticated, basket, navigate]);
 
+    /**
+     * Обработчик изменения полей формы.
+     * @param {React.ChangeEvent<HTMLInputElement | HTMLSelectElement>} e - Событие изменения
+     */
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
         const { name, value } = e.target;
         setFormData(prev => ({ ...prev, [name]: value }));
     };
 
+     /**
+     * Обработчик отправки формы.
+     * Создает заказ и очищает корзину при успехе.
+     * @param {React.FormEvent} e - Событие отправки
+     */
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setIsLoading(true);
