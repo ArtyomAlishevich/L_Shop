@@ -7,6 +7,8 @@ import dotenv from 'dotenv';
 import deliveryRouter from './routers/deliveryRouter';
 import path from 'path';
 import cors from 'cors';
+import swaggerUi from 'swagger-ui-express';
+import { swaggerSpec } from './config/swagger';
 
 dotenv.config();
 const app: Application = express();
@@ -18,9 +20,6 @@ app.use(cors({
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization']
 }));
-
-
-
 
 app.use(session({
     secret: process.env.SESSION_SECRET!,
@@ -45,10 +44,7 @@ app.use('/api/boardGames', boardGamesRouter);
 app.use('/api/auth', authRouter);
 app.use('/api/baskets', basketsRouter);
 app.use('/api/delivery', deliveryRouter);
-
-
-
-
+app.use('/api/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 app.listen(PORT, () => {
     console.log('Сервер запущен');

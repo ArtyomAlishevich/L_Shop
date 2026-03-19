@@ -5,14 +5,37 @@ import { useBasket } from '../../hooks/useBasket';
 import { useAuth } from '../../hooks/useAuth';
 import './GameCard.css';
 
+/**
+ * Props для компонента GameCard
+ */
 interface GameCardProps {
+    /** Объект игры со всеми данными */
     game: IBoardGame;
 }
 
+/**
+ * Компонент карточки игры в каталоге.
+ * 
+ * Отображает превью, название, категории, цену со скидкой (если есть)
+ * и кнопку добавления в корзину. Является ссылкой на страницу игры.
+ * 
+ * @component
+ * @param {GameCardProps} props - Свойства компонента
+ * @returns {JSX.Element} Карточка игры
+ * 
+ * @example
+ * <GameCard game={game} />
+ */
 export const GameCard: React.FC<GameCardProps> = ({ game }) => {
     const { addToBasket } = useBasket();
     const { isAuthenticated } = useAuth();
 
+     /**
+     * Обработчик добавления игры в корзину.
+     * Проверяет авторизацию и добавляет игру.
+     * 
+     * @param {React.MouseEvent} e - Событие клика
+     */
     const handleAddToBasket = async (e: React.MouseEvent) => {
         e.preventDefault();
         if (!isAuthenticated) {

@@ -3,6 +3,18 @@ import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../hooks/useAuth';
 import './AuthForms.css';
 
+/**
+ * Компонент формы входа.
+ * 
+ * Предоставляет поля для ввода логина и пароля,
+ * обрабатывает отправку и отображает ошибки.
+ * 
+ * @component
+ * @returns {JSX.Element} Форма входа
+ * 
+ * @example
+ * <LoginForm />
+ */
 export const LoginForm: React.FC = () => {
     const [login, setLogin] = useState('');
     const [password, setPassword] = useState('');
@@ -11,6 +23,10 @@ export const LoginForm: React.FC = () => {
     const { login: loginUser } = useAuth();
     const navigate = useNavigate();
 
+    /**
+     * Обработчик отправки формы.
+     * @param {React.FormEvent} e - Событие отправки
+     */
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setError('');

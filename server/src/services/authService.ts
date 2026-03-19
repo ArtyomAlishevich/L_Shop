@@ -7,6 +7,26 @@ import bcrypt from 'bcrypt';
 import { BasketsService } from "./basketsService";
 
 export class AuthService {
+    /**
+     * Регистрирует нового пользователя.
+     * 
+     * @param newUserData - данные нового пользователя
+     * @param newUserData.login - уникальный логин пользователя
+     * @param newUserData.password - пароль (будет захэширован)
+     * @param newUserData.name - отображаемое имя пользователя
+     * 
+     * @returns {Promise<IUser>} созданный пользователь с id, хешем пароля и датой регистрации
+     * 
+     * @throws {DuplicateError} если пользователь с таким логином уже существует
+     * @throws {Error} при ошибке базы данных или хеширования пароля
+     * 
+     * @example
+     * const newUser = await AuthService.register({
+     *   login: 'ivan123',
+     *   password: 'secret123',
+     *   name: 'Иван Петров'
+     * });
+     */
     static async register(newUserData: IUserRequestDTO) : Promise<IUser> {
         try {
             if (UsersDatabase.getByLogin(newUserData.login)) {
@@ -21,6 +41,24 @@ export class AuthService {
         }
     }
 
+        /**
+     * Аутентифицирует пользователя по логину и паролю.
+     * 
+     * @param userData - данные для входа
+     * @param userData.login - логин пользователя
+     * @param userData.password - пароль для проверки
+     * 
+     * @returns {Promise<IUser>} найденный пользователь (содержит хеш пароля только для внутреннего использования)
+     * 
+     * @throws {UnauthorizedError} если пользователь не найден или пароль неверен
+     * @throws {Error} при ошибке базы данных
+     * 
+     * @example
+     * const user = await AuthService.login({
+     *   login: 'ivan123',
+     *   password: 'secret123'
+     * });
+     */
     static async login(userData: IUserRequestDTO): Promise<IUser> {
         try {
             const verifyingUser = UsersDatabase.getByLogin(userData.login);

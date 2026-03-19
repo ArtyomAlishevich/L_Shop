@@ -5,6 +5,10 @@ import { deliveryApi } from '../api/delivery';
 import { IDelivery } from '../types';
 import './TrackingPage.css';
 
+/**
+ * Массив статусов доставки с их описаниями и прогрессом.
+ * @constant
+ */
 const deliverySteps = [
     { status: 'created', label: 'Заказ создан', description: 'Заказ принят и обрабатывается', progress: 20 },
     { status: 'paid', label: 'Оплачен', description: 'Оплата получена', progress: 40 },
@@ -15,6 +19,16 @@ const deliverySteps = [
     { status: 'cancelled', label: 'Отменён', description: 'Заказ отменён', progress: 0 }
 ];
 
+/**
+ * Получает информацию о статусе заказа.
+ * 
+ * @param {string} status - Код статуса из объекта заказа
+ * @returns {Object} Объект с данными статуса (иконка, описание, прогресс, цвет)
+ * 
+ * @example
+ * const statusInfo = getStatusInfo('shipped');
+ * console.log(statusInfo.label); // "📦 Передан курьеру"
+ */
 const getStatusInfo = (status: string) => {
     const statusMap: Record<string, { label: string, description: string, progress: number, color: string }> = {
         'created': {
@@ -63,6 +77,18 @@ const getStatusInfo = (status: string) => {
     return statusMap[status] || statusMap['created'];
 };
 
+/**
+ * Страница отслеживания заказа.
+ * 
+ * Отображает детальную информацию о заказе и его статус в реальном времени.
+ * Автоматически обновляет статус каждые 30 секунд.
+ * 
+ * @component
+ * @returns {JSX.Element} Страница отслеживания заказа
+ * 
+ * @example
+ * <TrackingPage />
+ */
 export const TrackingPage: React.FC = () => {
     const { orderId } = useParams<{ orderId: string }>();
     const { isAuthenticated } = useAuth();
@@ -82,6 +108,10 @@ export const TrackingPage: React.FC = () => {
         }
     }, [orderId, isAuthenticated]);
 
+    /**
+     * Загружает данные заказа с сервера.
+     * @async
+     */
     const loadOrder = async () => {
         try {
             setIsLoading(true);

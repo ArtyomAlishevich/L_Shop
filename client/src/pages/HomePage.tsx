@@ -2,6 +2,18 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './HomePage.css';
 
+/**
+ * Главная страница приложения.
+ * 
+ * Отображает приветственный баннер (hero section) с призывом к действию
+ * и список преимуществ магазина в виде сетки карточек.
+ * 
+ * @component
+ * @returns {JSX.Element} Главная страница
+ * 
+ * @example
+ * <HomePage />
+ */
 export const HomePage: React.FC = () => {
     return (
         <div className="home-page">
