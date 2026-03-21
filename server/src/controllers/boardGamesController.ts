@@ -4,6 +4,8 @@ import { BoardGamesService } from "../services/boardGamesService";
 export class BoardGamesController {
     static getAll(req: Request, res: Response) : void {
         try {
+            const locale = (req.session.locale as 'ru' | 'en') || 'ru';
+
             const {
                 search,
                 sort,
@@ -20,7 +22,7 @@ export class BoardGamesController {
             if (search) {
                 if (typeof search === 'string') {
                     const searchText = search.toLowerCase().replace(/\s+/g, '');
-                    data = data.filter(game => game.name.toLowerCase().replace(/\s+/g, '').includes(searchText));
+                    data = data.filter(game => game.name[locale].toLowerCase().replace(/\s+/g, '').includes(searchText));
                 }
                 else {
                     console.log('Параметр поиска должен быть непустой строкой');
@@ -30,13 +32,13 @@ export class BoardGamesController {
 
             if (category) {
                 if (typeof category === 'string') {
-                    data = data.filter(game => game.categories.includes(category));
+                    data = data.filter(game => game.categories[locale].includes(category));
                 }
                 else if (Array.isArray(category)) {
                     let categoryList = category.map(c => String(c).toLowerCase().trim()).filter(c => c.length > 0);
                     if (categoryList.length > 0) {
                         data = data.filter(game => {
-                            const gameCategories = game.categories.map(c => c.toLowerCase());
+                            const gameCategories = game.categories[locale].map(c => c.toLowerCase());
                             return categoryList.some(c => gameCategories.includes(c));
                         });
                     }
@@ -158,7 +160,29 @@ export class BoardGamesController {
                 return;
             }
 
-            res.status(200).json({ data: data });
+            const localizedData = data.map(game => ({
+                id: game.id,
+                name: game.name[locale],
+                description: game.description[locale],
+                categories: game.categories[locale],
+                minPlayers: game.minPlayers,
+                maxPlayers: game.maxPlayers,
+                isAvailable: game.isAvailable,
+                price: game.price,
+                amount: game.amount,
+                images: game.images,
+                delivery: game.delivery ? {
+                    startCountry: game.delivery.startCountry,
+                    startTown: game.delivery.startTown,
+                    startStreet: game.delivery.startStreet,
+                    startHouseNumber: game.delivery.startHouseNumber,
+                    closestDate: game.delivery.closestDate,
+                    price: game.delivery.price
+                } : undefined,
+                discount: game.discount
+            }));
+
+            res.status(200).json({ data: localizedData });
         } catch(error) {
             console.log((error as Error).message);
             res.status(500).json(`Ошибка при получении всех настольных игр: ${(error as Error).message}`);

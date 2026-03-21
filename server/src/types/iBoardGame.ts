@@ -1,24 +1,33 @@
 export interface IBoardGame {
-    id: string,
-    name: string,
-    description: string,
-    categories: string[],
-    minPlayers: number,
-    maxPlayers: number,
-    isAvailable: boolean,
-    price: number,
-    amount: number,
+    id: string;
+    name: {
+        ru: string;
+        en: string;
+    };
+    categories: {
+        ru: string[];
+        en: string[];
+    };
+    description: {
+        ru: string;
+        en: string;
+    };
+    minPlayers: number;
+    maxPlayers: number;
+    isAvailable: boolean;
+    price: number;
+    amount: number;
     images: {
-        preview?: string,
-        gallery?: string[]
-    }
+        preview?: string;
+        gallery?: string[];
+    };
     delivery?: {
-        startCountry: string,
-        startTown: string,
-        startStreet: string,
-        startHouseNumber: string,
-        closestDate: string,
-        price: number
-    }
-    discount?: number
+        startCountry: string;
+        startTown: string;
+        startStreet: string;
+        startHouseNumber: string;
+        closestDate: string;
+        price: number;
+    };
+    discount?: number;
 }
