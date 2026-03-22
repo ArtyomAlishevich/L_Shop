@@ -1,280 +1,319 @@
 {
-    "boardGames" : [
+    "boardGames": [
         {
-        "id": "1",
-        "name": "Кладоискатели",
-        "categories": [
-                "Приключения", 
-                "Для компании",
-                "Логическая",
-                "Развивающая"
-            ],
-        "description": "Настольная игра 'Кладоискатели' – настоящее приключения! Игра – это сборник из 12 мини-игр, объединенных одним сюжетом – поиском сокровищ. Во время приключений игрокам предстоит посетить непроходимые джунгли, затерянные острова, жаркую пустыню, дремучие леса и высокие горы. В каждой из этих местностей они должны искать сокровища. Но чтобы заполучить их, игрокам предстоит пройти по разваливающемуся прямо под ними мосту, найти дорогу в запутанном лабиринте, не упасть в пропасть, завладеть древним тотемом и многое другое. Справиться со всем этим игрокам помогут полезные предметы, которые они возьмут с собой в дорогу: мачете, веревка, факел и сигнальная ракета.",
-        "minPlayers": 3,
-        "maxPlayers": 5,
-        "isAvailable": true,
-        "price": 120,
-        "amount" : 34,
-        "images": {
-            "preview": "/images/klad.jpg",
-            "gallery": [
-                "/images/klad-1.jpg",
-                "/images/klad-2.jpg"
-            ]
-        },
-        "delivery": {
-            "startCountry": "Россия",
-            "startTown": "Москва",
-            "startStreet": "Пушкина",
-            "startHouseNumber": "42",
-            "closestDate": "2024-02-01T10:30:00.000Z",
-            "price": 10
-        }
-    },
-    {
-        "id": "2",
-        "name": "Цивилизация",
-        "categories": [
-            "Стратегия",
-            "Тактическая"
-        ],
-        "description": "Почувствуйте себя правителем целой нации! В игре «Цивилизация» вы будете основывать города, исследовать новые земли, открывать технологии и сражаться с соседями. Сможете ли вы построить чудо света и отправить корабль в космос раньше других? Вам решать, по какому пути пойдет ваша империя: путь воина, дипломата или ученого.",
-        "minPlayers": 2,
-        "maxPlayers": 2,
-        "isAvailable": true,
-        "price": 250,
-        "amount" : 732,
-        "images": {
-            "preview": "/images/civ.jpg",
-            "gallery": [
-                "/images/civ-1.jpg",
-                "/images/civ-2.jpg"
+            "id": "1",
+            "name": {
+                "ru": "Кладоискатели",
+                "en": "Treasure Hunters"
+            },
+            "categories": {
+                "ru": ["Приключения", "Для компании", "Логическая", "Развивающая"],
+                "en": ["Adventure", "Party Game", "Logic", "Educational"]
+            },
+            "description": {
+                "ru": "Настольная игра 'Кладоискатели' – настоящее приключения! Игра – это сборник из 12 мини-игр, объединенных одним сюжетом – поиском сокровищ. Во время приключений игрокам предстоит посетить непроходимые джунгли, затерянные острова, жаркую пустыню, дремучие леса и высокие горы. В каждой из этих местностей они должны искать сокровища. Но чтобы заполучить их, игрокам предстоит пройти по разваливающемуся прямо под ними мосту, найти дорогу в запутанном лабиринте, не упасть в пропасть, завладеть древним тотемом и многое другое. Справиться со всем этим игрокам помогут полезные предметы, которые они возьмут с собой в дорогу: мачете, веревка, факел и сигнальная ракета.",
+                "en": "Treasure Hunters is a real adventure! The game is a collection of 12 mini-games united by one plot – the search for treasure. During the adventure, players will have to visit impenetrable jungles, lost islands, hot deserts, dense forests and high mountains. In each of these locations, they must search for treasures. But to get them, players will have to cross a bridge collapsing right under them, find their way through a tangled maze, not fall into an abyss, take possession of an ancient totem and much more. Players will be helped by useful items they take on the road: a machete, rope, torch and flare."
+            },
+            "minPlayers": 3,
+            "maxPlayers": 5,
+            "isAvailable": true,
+            "price": 120,
+            "amount": 34,
+            "images": {
+                "preview": "/images/klad.jpg",
+                "gallery": [
+                    "/images/klad-1.jpg",
+                    "/images/klad-2.jpg"
                 ]
+            },
+            "delivery": {
+                "startCountry": "Россия",
+                "startTown": "Москва",
+                "startStreet": "Пушкина",
+                "startHouseNumber": "42",
+                "closestDate": "2024-02-01T10:30:00.000Z",
+                "price": 10
+            }
         },
-        "delivery": {
-            "startCountry": "Россия",
-            "startTown": "Москва",
-            "startStreet": "Ленина",
-            "startHouseNumber": "10",
-            "closestDate": "2024-02-01T10:30:00.000",
-            "price": 15
+        {
+            "id": "2",
+            "name": {
+                "ru": "Цивилизация",
+                "en": "Civilization"
+            },
+            "categories": {
+                "ru": ["Стратегия", "Тактическая"],
+                "en": ["Strategy", "Tactical"]
+            },
+            "description": {
+                "ru": "Почувствуйте себя правителем целой нации! В игре «Цивилизация» вы будете основывать города, исследовать новые земли, открывать технологии и сражаться с соседями. Сможете ли вы построить чудо света и отправить корабль в космос раньше других? Вам решать, по какому пути пойдет ваша империя: путь воина, дипломата или ученого.",
+                "en": "Feel like the ruler of an entire nation! In Civilization, you will found cities, explore new lands, discover technologies and fight with neighbors. Can you build a wonder of the world and send a ship into space before others? It's up to you which path your empire will take: the path of the warrior, diplomat or scientist."
+            },
+            "minPlayers": 2,
+            "maxPlayers": 2,
+            "isAvailable": true,
+            "price": 250,
+            "amount": 732,
+            "images": {
+                "preview": "/images/civ.jpg",
+                "gallery": [
+                    "/images/civ-1.jpg",
+                    "/images/civ-2.jpg"
+                ]
+            },
+            "delivery": {
+                "startCountry": "Россия",
+                "startTown": "Москва",
+                "startStreet": "Ленина",
+                "startHouseNumber": "10",
+                "closestDate": "2024-02-01T10:30:00.000",
+                "price": 15
+            },
+            "discount": 10
         },
-        "discount": 10
-    },
-    {
-    "id": "4",
-    "name": "Мафия. Темный переулок",
-    "categories": [
-        "Психологическая",
-        "Для компании",
-        "Детектив"
-    ],
-    "description": "Культовая игра в новом антураже! Добро пожаловать в Чикаго 30-х годов. Мирные жители устали от беспредела, но мафия не дремлет. Игрокам предстоит выяснять, кто есть кто, с помощью дебатов, блефа и интуиции. В комплекте вы найдете уникальные карты персонажей с особыми способностями (Доктор, Комиссар, Куртизанка), а также карточки-маски для закрытия глаз во время «ночной» фазы. Идеальна для большой компании!",
-    "minPlayers": 5,
-    "maxPlayers": 12,
-    "isAvailable": true,
-    "price": 85,
-    "amount": 43,
-    "images": {
-        "preview": "/images/mafia.jpg",
-        "gallery": [
-            "/images/mafia-1.jpg",
-            "/images/mafia-2.jpg"
-        ]
-    },
-    "delivery": {
-        "startCountry": "Россия",
-        "startTown": "Москва",
-        "startStreet": "Тверская",
-        "startHouseNumber": "5",
-        "closestDate": "2024-02-02T14:20:00.000Z",
-        "price": 10
-    }
-},
-{
-    "id": "10",
-    "name": "Данетки. Секреты Шерлока",
-    "categories": [
-        "Детектив",
-        "Логическая",
-        "Головоломка",
-        "Для компании"
-    ],
-    "description": "Игра для любителей поломать голову. Ведущий зачитывает запутанную ситуацию (преступление или загадочное происшествие), а игроки могут задавать только вопросы, на которые можно ответить «Да», «Нет» или «Не важно». Их задача — восстановить цепочку событий и понять, что же произошло на самом деле. В этом издании собраны самые таинственные истории времен Шерлока Холмса, полные ловушек и неожиданных развязок.",
-    "minPlayers": 2,
-    "maxPlayers": 8,
-    "isAvailable": true,
-    "price": 55,
-    "amount": 88,
-    "images": {
-        "preview": "/images/danetki.jpg",
-        "gallery": [
-            "/images/danetki-1.jpg",
-            "/images/danetki-2.jpg"
-        ]
-    },
-    "delivery": {
-        "startCountry": "Россия",
-        "startTown": "Нижний Новгород",
-        "startStreet": "Рождественская",
-        "startHouseNumber": "9",
-        "closestDate": "2024-02-01T17:15:00.000Z",
-        "price": 7
-    }
-},
-{
-    "id": "13",
-    "name": "Баланс",
-    "categories": [
-        "Детская",
-        "Семейная",
-        "На ловкость",
-        "Развивающая"
-    ],
-    "description": "Игра 'Баланс' захватывает дух и пробуждает настоящий азарт! Суть игры заключается в том, что необходимо строить пирамиду из фишек до тех пор, пока она не обвалится. Размер фишек идеально подходит для маленьких детских пальчиков, что делает игру доступной для самых юных участников.\n\nПервым начинает игру самый младший игрок. В свой ход ему необходимо бросить игральный кубик и разместить одну фишку в соответствии с выпавшим числом:\n1 — на одной ячейке уровня 1;\n2 — на любой из 4 ячеек уровня 2;\n3 — на любой из 8 ячеек уровня 3;\n4 — на любой из 8 ячеек уровня 4;\n5 — на любой из 4 ячеек уровня 5;\n6 — на любой ячейке пирамиды.\n\nИгра заканчивается, когда кто-то из игроков провоцирует падение фишек. Этот игрок считается проигравшим. Отличный способ развить мелкую моторику, координацию и умение просчитывать риски!",
-    "minPlayers": 2,
-    "maxPlayers": 4,
-    "isAvailable": true,
-    "price": 95,
-    "amount": 27,
-    "images": {
-        "preview": "/images/balance.jpg",
-        "gallery": [
-            "/images/balance-1.jpg"
-        ]
-    },
-    "delivery": {
-        "startCountry": "Россия",
-        "startTown": "Москва",
-        "startStreet": "Ленинградское шоссе",
-        "startHouseNumber": "15",
-        "closestDate": "2024-02-05T14:00:00.000Z",
-        "price": 9
-    }
-},
-{
-    "id": "14",
-    "name": "Jenga",
-    "categories": [
-        "На ловкость",
-        "Семейная",
-        "Для компании",
-        "Логическая"
-    ],
-    "description": "«Jenga» — настольная игра для тех, кто хочет сделать вызов своей аккуратности и логике. Играть в нее достаточно легко: из одинаковых деревянных параллелепипедов строится башня, внешне напоминающая высотный дом правильной формы, при этом «этажи» состоят из 3-х брусков, а направление укладки чередуется при каждом новом слое. Когда конструкция построена, игроки начинают по очереди доставать один блок и ставить его на вершину постройки.\n\nПобеда достается самому аккуратному и сообразительному, поскольку зависит в равной степени от того, как игрок сделает выбор: откуда брать и куда ставить брусок, так и от точности движений.\n\nОпыт в «Дженге» дает определенные преимущества для победы и позволяет строить небывалой высоты конструкции (если все игроки не новички). Построенная таким образом башня будет выглядеть для неискушенных премудростями игры крайне шаткой, однако при этом, на самом деле, ее шансы упасть без посторонней помощи будут равны нулю.\n\n«Jenga» может быть увлечением и для одного человека, когда он для интереса строит её максимально высокой, а затем фотографирует своё творчество до падения и в процессе, который может быть невероятно захватывающим.",
-    "minPlayers": 1,
-    "maxPlayers": 8,
-    "isAvailable": true,
-    "price": 145,
-    "amount": 42,
-    "images": {
-        "preview": "/images/jenga.jpg",
-        "gallery": [
-            "/images/jenga-1.jpg",
-            "/images/jenga-2.jpg"
-        ]
-    },
-    "delivery": {
-        "startCountry": "Россия",
-        "startTown": "Москва",
-        "startStreet": "Профсоюзная",
-        "startHouseNumber": "61",
-        "closestDate": "2024-02-04T11:30:00.000Z",
-        "price": 12
-    },
-    "discount": 7
-},
-{
-    "id": "15",
-    "name": "Шахматы классические",
-    "categories": [
-        "Стратегия",
-        "Логическая",
-        "Интеллектуальная",
-        "Для двоих"
-    ],
-    "description": "Шахматы — одна из древнейших и самых популярных интеллектуальных игр в истории человечества. Эта игра сочетает в себе элементы науки, искусства и спорта. Цель игры — объявить мат королю противника, создав положение, от которого нет защиты.\n\nВ набор входят 32 деревянные фигуры (16 белых и 16 черных) и классическая доска с клетками 8х8. Король, ферзь, ладьи, слоны, кони и пешки — каждая фигура ходит по своим правилам, что создает бесконечное разнообразие тактических и стратегических возможностей.\n\nШахматы развивают логическое мышление, память, внимание, умение просчитывать ходы наперед и принимать решения. Подходят для игроков любого возраста — от детей, осваивающих азы, до профессионалов, участвующих в турнирах. Это игра, которая никогда не надоедает: считается, что количество возможных шахматных партий превышает количество атомов в наблюдаемой Вселенной.\n\nВ комплекте: игровая доска (складная), 32 фигуры, инструкция с базовыми правилами.",
-    "minPlayers": 2,
-    "maxPlayers": 2,
-    "isAvailable": true,
-    "price": 210,
-    "amount": 56,
-    "images": {
-        "preview": "/images/chess.jpg",
-        "gallery": [
-            "/images/chess-1.jpg"
-        ]
-    },
-    "delivery": {
-        "startCountry": "Россия",
-        "startTown": "Москва",
-        "startStreet": "Тверская",
-        "startHouseNumber": "12",
-        "closestDate": "2024-02-03T10:15:00.000Z",
-        "price": 10
-    },
-    "discount": 5
-},
-{
-    "id": "16",
-    "name": "Шашки русские (классические)",
-    "categories": [
-        "Логическая",
-        "Стратегия",
-        "Интеллектуальная",
-        "Для двоих"
-    ],
-    "description": "Шашки — одна из самых популярных настольных игр в мире, знакомая каждому с детства. Простые правила скрывают удивительную глубину и богатство тактических возможностей. Цель игры — «съесть» или запереть все шашки противника.\n\nВ набор входят 24 круглые деревянные шашки (12 светлых и 12 темных) и классическая доска с клетками 8х8. Игроки ходят по диагонали на одну клетку вперед, а при возможности — срубают шашку соперника, перепрыгивая через нее. Достигнув противоположного края доски, простая шашка превращается в дамку, которая может ходить на любое расстояние по диагонали.\n\nШашки отлично развивают логическое мышление, концентрацию внимания, умение просчитывать ходы и видеть комбинации на несколько шагов вперед. Это идеальная игра для семейного досуга, дружеских встреч или турнирных баталий. Несмотря на кажущуюся простоту, профессиональные шашки требуют не меньшей подготовки, чем шахматы.\n\nВ комплекте: игровая доска (складная, с классической разметкой), 24 шашки, инструкция с правилами игры в русские шашки.",
-    "minPlayers": 2,
-    "maxPlayers": 2,
-    "isAvailable": true,
-    "price": 135,
-    "amount": 48,
-    "images": {
-        "preview": "/images/checkers.jpg",
-        "gallery": [
-            "/images/checkers-1.jpg"
-        ]
-    },
-    "delivery": {
-        "startCountry": "Россия",
-        "startTown": "Москва",
-        "startStreet": "Новый Арбат",
-        "startHouseNumber": "24",
-        "closestDate": "2024-02-02T13:45:00.000Z",
-        "price": 8
-    }
-},
-{
-    "id": "17",
-    "name": "UNO",
-    "categories": [
-        "Карточная",
-        "Для компании",
-        "Вечеринка",
-        "Семейная"
-    ],
-    "description": "UNO — самая известная карточная игра в мире, которая покорила миллионы сердец своей простотой, динамичностью и азартом. Это идеальная игра для любой компании: от дружеских посиделок до шумных вечеринок.\n\nЦель игры — первым избавиться от всех карт на руке. Игроки по очереди выкладывают карты, совпадающие с верхней картой сброса по цвету, цифре или символу. Но всё меняется, когда в ход идут специальные карты: «Пропусти ход», «Возьми две», «Смена направления», «Закажи цвет» и мощнейшая карта «Возьми четыре». Эти карты способны перевернуть ход игры в любой момент!\n\nКогда у игрока остается одна карта, он обязан крикнуть «УНО!» (что с итальянского означает «Один»), иначе его ждет штраф — дополнительные карты из колоды. Тот, кто сбросит все карты первым, получает очки за карты, оставшиеся на руках у соперников. Игра ведется до набора определенного количества очков (обычно 500).\n\nUNO развивает быстроту реакции, внимательность и умение просчитывать действия соперников. Компактная колода легко помещается в карман, поэтому игру удобно брать с собой в путешествия, гости или на пикник.\n\nВ комплекте: 108 карт (цифровые и специальные), инструкция с правилами и дополнительными вариантами игры.",
-    "minPlayers": 2,
-    "maxPlayers": 10,
-    "isAvailable": true,
-    "price": 75,
-    "amount": 93,
-    "images": {
-        "preview": "/images/uno.jpg",
-        "gallery": [
-            "/images/uno-1.jpg",
-            "/images/uno-2.jpg"
-        ]
-    },
-    "delivery": {
-        "startCountry": "Россия",
-        "startTown": "Москва",
-        "startStreet": "Пятницкая",
-        "startHouseNumber": "18",
-        "closestDate": "2024-02-01T16:20:00.000Z",
-        "price": 7
-    }
-}
+        {
+            "id": "4",
+            "name": {
+                "ru": "Мафия. Темный переулок",
+                "en": "Mafia. Dark Alley"
+            },
+            "categories": {
+                "ru": ["Психологическая", "Для компании", "Детектив"],
+                "en": ["Psychological", "Party Game", "Detective"]
+            },
+            "description": {
+                "ru": "Культовая игра в новом антураже! Добро пожаловать в Чикаго 30-х годов. Мирные жители устали от беспредела, но мафия не дремлет. Игрокам предстоит выяснять, кто есть кто, с помощью дебатов, блефа и интуиции. В комплекте вы найдете уникальные карты персонажей с особыми способностями (Доктор, Комиссар, Куртизанка), а также карточки-маски для закрытия глаз во время «ночной» фазы. Идеальна для большой компании!",
+                "en": "The cult game in a new setting! Welcome to Chicago in the 30s. Civilians are tired of the lawlessness, but the mafia doesn't sleep. Players will have to find out who is who through debates, bluff and intuition. In the box you will find unique character cards with special abilities (Doctor, Commissioner, Courtesan), as well as mask cards for closing eyes during the 'night' phase. Perfect for large groups!"
+            },
+            "minPlayers": 5,
+            "maxPlayers": 12,
+            "isAvailable": true,
+            "price": 85,
+            "amount": 43,
+            "images": {
+                "preview": "/images/mafia.jpg",
+                "gallery": [
+                    "/images/mafia-1.jpg",
+                    "/images/mafia-2.jpg"
+                ]
+            },
+            "delivery": {
+                "startCountry": "Россия",
+                "startTown": "Москва",
+                "startStreet": "Тверская",
+                "startHouseNumber": "5",
+                "closestDate": "2024-02-02T14:20:00.000Z",
+                "price": 10
+            }
+        },
+        {
+            "id": "10",
+            "name": {
+                "ru": "Данетки. Секреты Шерлока",
+                "en": "Yes-No Games. Sherlock's Secrets"
+            },
+            "categories": {
+                "ru": ["Детектив", "Логическая", "Головоломка", "Для компании"],
+                "en": ["Detective", "Logic", "Puzzle", "Party Game"]
+            },
+            "description": {
+                "ru": "Игра для любителей поломать голову. Ведущий зачитывает запутанную ситуацию (преступление или загадочное происшествие), а игроки могут задавать только вопросы, на которые можно ответить «Да», «Нет» или «Не важно». Их задача — восстановить цепочку событий и понять, что же произошло на самом деле. В этом издании собраны самые таинственные истории времен Шерлока Холмса, полные ловушек и неожиданных развязок.",
+                "en": "A game for puzzle lovers. The host reads out a confusing situation (a crime or mysterious incident), and players can only ask questions that can be answered with 'Yes', 'No' or 'Doesn't matter'. Their task is to reconstruct the chain of events and understand what really happened. This edition contains the most mysterious stories from the times of Sherlock Holmes, full of traps and unexpected twists."
+            },
+            "minPlayers": 2,
+            "maxPlayers": 8,
+            "isAvailable": true,
+            "price": 55,
+            "amount": 88,
+            "images": {
+                "preview": "/images/danetki.jpg",
+                "gallery": [
+                    "/images/danetki-1.jpg",
+                    "/images/danetki-2.jpg"
+                ]
+            },
+            "delivery": {
+                "startCountry": "Россия",
+                "startTown": "Нижний Новгород",
+                "startStreet": "Рождественская",
+                "startHouseNumber": "9",
+                "closestDate": "2024-02-01T17:15:00.000Z",
+                "price": 7
+            }
+        },
+        {
+            "id": "13",
+            "name": {
+                "ru": "Баланс",
+                "en": "Balance"
+            },
+            "categories": {
+                "ru": ["Детская", "Семейная", "На ловкость", "Развивающая"],
+                "en": ["Children's", "Family", "Dexterity", "Educational"]
+            },
+            "description": {
+                "ru": "Игра 'Баланс' захватывает дух и пробуждает настоящий азарт! Суть игры заключается в том, что необходимо строить пирамиду из фишек до тех пор, пока она не обвалится. Размер фишек идеально подходит для маленьких детских пальчиков, что делает игру доступной для самых юных участников.\n\nПервым начинает игру самый младший игрок. В свой ход ему необходимо бросить игральный кубик и разместить одну фишку в соответствии с выпавшим числом:\n1 — на одной ячейке уровня 1;\n2 — на любой из 4 ячеек уровня 2;\n3 — на любой из 8 ячеек уровня 3;\n4 — на любой из 8 ячеек уровня 4;\n5 — на любой из 4 ячеек уровня 5;\n6 — на любой ячейке пирамиды.\n\nИгра заканчивается, когда кто-то из игроков провоцирует падение фишек. Этот игрок считается проигравшим. Отличный способ развить мелкую моторику, координацию и умение просчитывать риски!",
+                "en": "Balance is a game that takes your breath away and awakens real excitement! The essence of the game is to build a pyramid of chips until it collapses. The size of the chips is perfect for little children's fingers, making the game accessible to the youngest participants.\n\nThe youngest player starts the game. On their turn, they must roll the dice and place one chip according to the number rolled:\n1 — on one cell of level 1;\n2 — on any of the 4 cells of level 2;\n3 — on any of the 8 cells of level 3;\n4 — on any of the 8 cells of level 4;\n5 — on any of the 4 cells of level 5;\n6 — on any cell of the pyramid.\n\nThe game ends when someone causes the chips to fall. That player is considered the loser. An excellent way to develop fine motor skills, coordination and risk assessment!"
+            },
+            "minPlayers": 2,
+            "maxPlayers": 4,
+            "isAvailable": true,
+            "price": 95,
+            "amount": 27,
+            "images": {
+                "preview": "/images/balance.jpg",
+                "gallery": [
+                    "/images/balance-1.jpg"
+                ]
+            },
+            "delivery": {
+                "startCountry": "Россия",
+                "startTown": "Москва",
+                "startStreet": "Ленинградское шоссе",
+                "startHouseNumber": "15",
+                "closestDate": "2024-02-05T14:00:00.000Z",
+                "price": 9
+            }
+        },
+        {
+            "id": "14",
+            "name": {
+                "ru": "Jenga",
+                "en": "Jenga"
+            },
+            "categories": {
+                "ru": ["На ловкость", "Семейная", "Для компании", "Логическая"],
+                "en": ["Dexterity", "Family", "Party Game", "Logic"]
+            },
+            "description": {
+                "ru": "«Jenga» — настольная игра для тех, кто хочет сделать вызов своей аккуратности и логике. Играть в нее достаточно легко: из одинаковых деревянных параллелепипедов строится башня, внешне напоминающая высотный дом правильной формы, при этом «этажи» состоят из 3-х брусков, а направление укладки чередуется при каждом новом слое. Когда конструкция построена, игроки начинают по очереди доставать один блок и ставить его на вершину постройки.\n\nПобеда достается самому аккуратному и сообразительному, поскольку зависит в равной степени от того, как игрок сделает выбор: откуда брать и куда ставить брусок, так и от точности движений.\n\nОпыт в «Дженге» дает определенные преимущества для победы и позволяет строить небывалой высоты конструкции (если все игроки не новички). Построенная таким образом башня будет выглядеть для неискушенных премудростями игры крайне шаткой, однако при этом, на самом деле, ее шансы упасть без посторонней помощи будут равны нулю.\n\n«Jenga» может быть увлечением и для одного человека, когда он для интереса строит её максимально высокой, а затем фотографирует своё творчество до падения и в процессе, который может быть невероятно захватывающим.",
+                "en": "Jenga is a board game for those who want to challenge their precision and logic. It's quite easy to play: a tower is built from identical wooden blocks, resembling a tall building of regular shape, with 'floors' consisting of 3 blocks, and the direction of laying alternates with each new layer. Once the structure is built, players take turns removing one block and placing it on top of the structure.\n\nVictory goes to the most careful and smartest player, as it depends equally on how the player chooses where to take the block and where to place it, as well as on the precision of movements.\n\nExperience in Jenga gives certain advantages for victory and allows building structures of unprecedented height (if all players are not beginners). A tower built this way will look extremely unstable to those unfamiliar with the game, but in fact, its chances of falling without outside help are zero.\n\nJenga can also be a solo activity when someone builds it as high as possible for fun, then photographs their creation before it falls and during the process, which can be incredibly exciting."
+            },
+            "minPlayers": 1,
+            "maxPlayers": 8,
+            "isAvailable": true,
+            "price": 145,
+            "amount": 42,
+            "images": {
+                "preview": "/images/jenga.jpg",
+                "gallery": [
+                    "/images/jenga-1.jpg",
+                    "/images/jenga-2.jpg"
+                ]
+            },
+            "delivery": {
+                "startCountry": "Россия",
+                "startTown": "Москва",
+                "startStreet": "Профсоюзная",
+                "startHouseNumber": "61",
+                "closestDate": "2024-02-04T11:30:00.000Z",
+                "price": 12
+            },
+            "discount": 7
+        },
+        {
+            "id": "15",
+            "name": {
+                "ru": "Шахматы классические",
+                "en": "Classic Chess"
+            },
+            "categories": {
+                "ru": ["Стратегия", "Логическая", "Интеллектуальная", "Для двоих"],
+                "en": ["Strategy", "Logic", "Intellectual", "For Two"]
+            },
+            "description": {
+                "ru": "Шахматы — одна из древнейших и самых популярных интеллектуальных игр в истории человечества. Эта игра сочетает в себе элементы науки, искусства и спорта. Цель игры — объявить мат королю противника, создав положение, от которого нет защиты.\n\nВ набор входят 32 деревянные фигуры (16 белых и 16 черных) и классическая доска с клетками 8х8. Король, ферзь, ладьи, слоны, кони и пешки — каждая фигура ходит по своим правилам, что создает бесконечное разнообразие тактических и стратегических возможностей.\n\nШахматы развивают логическое мышление, память, внимание, умение просчитывать ходы наперед и принимать решения. Подходят для игроков любого возраста — от детей, осваивающих азы, до профессионалов, участвующих в турнирах. Это игра, которая никогда не надоедает: считается, что количество возможных шахматных партий превышает количество атомов в наблюдаемой Вселенной.\n\nВ комплекте: игровая доска (складная), 32 фигуры, инструкция с базовыми правилами.",
+                "en": "Chess is one of the oldest and most popular intellectual games in human history. This game combines elements of science, art and sport. The goal is to checkmate the opponent's king by creating a position from which there is no defense.\n\nThe set includes 32 wooden pieces (16 white and 16 black) and a classic 8x8 board. King, queen, rooks, bishops, knights and pawns — each piece moves according to its own rules, creating endless tactical and strategic possibilities.\n\nChess develops logical thinking, memory, attention, the ability to calculate moves ahead and make decisions. Suitable for players of any age — from children learning the basics to professionals participating in tournaments. It's a game that never gets boring: it is said that the number of possible chess games exceeds the number of atoms in the observable universe.\n\nSet includes: game board (folding), 32 pieces, instructions with basic rules."
+            },
+            "minPlayers": 2,
+            "maxPlayers": 2,
+            "isAvailable": true,
+            "price": 210,
+            "amount": 56,
+            "images": {
+                "preview": "/images/chess.jpg",
+                "gallery": [
+                    "/images/chess-1.jpg"
+                ]
+            },
+            "delivery": {
+                "startCountry": "Россия",
+                "startTown": "Москва",
+                "startStreet": "Тверская",
+                "startHouseNumber": "12",
+                "closestDate": "2024-02-03T10:15:00.000Z",
+                "price": 10
+            },
+            "discount": 5
+        },
+        {
+            "id": "16",
+            "name": {
+                "ru": "Шашки русские (классические)",
+                "en": "Russian Checkers (Classic)"
+            },
+            "categories": {
+                "ru": ["Логическая", "Стратегия", "Интеллектуальная", "Для двоих"],
+                "en": ["Logic", "Strategy", "Intellectual", "For Two"]
+            },
+            "description": {
+                "ru": "Шашки — одна из самых популярных настольных игр в мире, знакомая каждому с детства. Простые правила скрывают удивительную глубину и богатство тактических возможностей. Цель игры — «съесть» или запереть все шашки противника.\n\nВ набор входят 24 круглые деревянные шашки (12 светлых и 12 темных) и классическая доска с клетками 8х8. Игроки ходят по диагонали на одну клетку вперед, а при возможности — срубают шашку соперника, перепрыгивая через нее. Достигнув противоположного края доски, простая шашка превращается в дамку, которая может ходить на любое расстояние по диагонали.\n\nШашки отлично развивают логическое мышление, концентрацию внимания, умение просчитывать ходы и видеть комбинации на несколько шагов вперед. Это идеальная игра для семейного досуга, дружеских встреч или турнирных баталий. Несмотря на кажущуюся простоту, профессиональные шашки требуют не меньшей подготовки, чем шахматы.\n\nВ комплекте: игровая доска (складная, с классической разметкой), 24 шашки, инструкция с правилами игры в русские шашки.",
+                "en": "Checkers is one of the most popular board games in the world, familiar to everyone since childhood. Simple rules hide surprising depth and tactical richness. The goal is to 'eat' or trap all of the opponent's checkers.\n\nThe set includes 24 round wooden checkers (12 light and 12 dark) and a classic 8x8 board. Players move diagonally forward one square, and when possible, capture the opponent's checker by jumping over it. Upon reaching the opposite edge of the board, a simple checker becomes a king, which can move any distance diagonally.\n\nCheckers excellently develops logical thinking, concentration, the ability to calculate moves and see combinations several steps ahead. This is an ideal game for family leisure, friendly gatherings or tournament battles. Despite its apparent simplicity, professional checkers requires no less preparation than chess.\n\nSet includes: game board (folding, with classic markings), 24 checkers, instructions with rules for Russian checkers."
+            },
+            "minPlayers": 2,
+            "maxPlayers": 2,
+            "isAvailable": true,
+            "price": 135,
+            "amount": 48,
+            "images": {
+                "preview": "/images/checkers.jpg",
+                "gallery": [
+                    "/images/checkers-1.jpg"
+                ]
+            },
+            "delivery": {
+                "startCountry": "Россия",
+                "startTown": "Москва",
+                "startStreet": "Новый Арбат",
+                "startHouseNumber": "24",
+                "closestDate": "2024-02-02T13:45:00.000Z",
+                "price": 8
+            }
+        },
+        {
+            "id": "17",
+            "name": {
+                "ru": "UNO",
+                "en": "UNO"
+            },
+            "categories": {
+                "ru": ["Карточная", "Для компании", "Вечеринка", "Семейная"],
+                "en": ["Card Game", "Party Game", "Party", "Family"]
+            },
+            "description": {
+                "ru": "UNO — самая известная карточная игра в мире, которая покорила миллионы сердец своей простотой, динамичностью и азартом. Это идеальная игра для любой компании: от дружеских посиделок до шумных вечеринок.\n\nЦель игры — первым избавиться от всех карт на руке. Игроки по очереди выкладывают карты, совпадающие с верхней картой сброса по цвету, цифре или символу. Но всё меняется, когда в ход идут специальные карты: «Пропусти ход», «Возьми две», «Смена направления», «Закажи цвет» и мощнейшая карта «Возьми четыре». Эти карты способны перевернуть ход игры в любой момент!\n\nКогда у игрока остается одна карта, он обязан крикнуть «УНО!» (что с итальянского означает «Один»), иначе его ждет штраф — дополнительные карты из колоды. Тот, кто сбросит все карты первым, получает очки за карты, оставшиеся на руках у соперников. Игра ведется до набора определенного количества очков (обычно 500).\n\nUNO развивает быстроту реакции, внимательность и умение просчитывать действия соперников. Компактная колода легко помещается в карман, поэтому игру удобно брать с собой в путешествия, гости или на пикник.\n\nВ комплекте: 108 карт (цифровые и специальные), инструкция с правилами и дополнительными вариантами игры.",
+                "en": "UNO is the most famous card game in the world, which has won millions of hearts with its simplicity, dynamism and excitement. It is the perfect game for any group: from friendly gatherings to noisy parties.\n\nThe goal is to be the first to get rid of all the cards in your hand. Players take turns matching the top card of the discard pile by color, number or symbol. But everything changes when special cards come into play: 'Skip', 'Draw Two', 'Reverse', 'Wild' and the most powerful 'Wild Draw Four'. These cards can turn the game around at any moment!\n\nWhen a player has one card left, they must shout 'UNO!' (which means 'One' in Italian), otherwise they face a penalty — drawing extra cards from the deck. The one who discards all cards first gets points for the cards left in opponents' hands. The game continues until someone reaches a set number of points (usually 500).\n\nUNO develops reaction speed, attentiveness and the ability to anticipate opponents' moves. The compact deck easily fits in a pocket, making it convenient to take on trips, to visit friends or on a picnic.\n\nSet includes: 108 cards (numbered and special), instructions with rules and additional game variations."
+            },
+            "minPlayers": 2,
+            "maxPlayers": 10,
+            "isAvailable": true,
+            "price": 75,
+            "amount": 93,
+            "images": {
+                "preview": "/images/uno.jpg",
+                "gallery": [
+                    "/images/uno-1.jpg",
+                    "/images/uno-2.jpg"
+                ]
+            },
+            "delivery": {
+                "startCountry": "Россия",
+                "startTown": "Москва",
+                "startStreet": "Пятницкая",
+                "startHouseNumber": "18",
+                "closestDate": "2024-02-01T16:20:00.000Z",
+                "price": 7
+            }
+        }
     ]
 }
