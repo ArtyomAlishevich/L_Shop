@@ -3,5 +3,6 @@ export interface IUser {
     name: string,
     login: string,
     password: string,
-    createdAt: string
+    createdAt: string,
+    role: 'user' | 'admin'
 }

@@ -8,6 +8,7 @@ import deliveryRouter from './routers/deliveryRouter';
 import localeRouter from './routers/localeRouter';
 import path from 'path';
 import cors from 'cors';
+import adminRouter from './routers/adminRouter';
 
 dotenv.config();
 const app: Application = express();
@@ -39,6 +40,7 @@ app.use('/api/auth', authRouter);
 app.use('/api/baskets', basketsRouter);
 app.use('/api/delivery', deliveryRouter);
 app.use('/api/locale', localeRouter);
+app.use('/api/admin', adminRouter);
 
 app.listen(PORT, () => {
     console.log('Сервер запущен');

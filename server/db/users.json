@@ -5,91 +5,120 @@
       "name": "Нечай Дмитрий Иванович",
       "password": "Bravlstarser_228",
       "login": "dimanecaj51",
-      "createdAt": "16.02.2026"
+      "createdAt": "16.02.2026",
+      "role": "user"
     },
     {
       "id": "e6654474-445e-4f71-9183-62171ea46e4f",
       "name": "Егор Иванов",
       "login": "Egor",
       "password": "$2b$10$PBQ0oPv8WONcSMRgU4zuyuJxMtPn0szzfOLcLkuY8oDd6E5B//zi.",
-      "createdAt": "Wed Feb 18 2026 15:31:04 GMT+0300 (Москва, стандартное время)"
+      "createdAt": "Wed Feb 18 2026 15:31:04 GMT+0300 (Москва, стандартное время)",
+      "role": "user"
     },
     {
       "id": "1164af29-fd75-47fe-8d7d-64d4c40b8e42",
       "name": "Алеша Денай",
       "login": "VseTop",
       "password": "$2b$10$cmo23YFgTdH8fmIfZHm4KOPKi1vuU5O6deNyksQkavThvjWhexybu",
-      "createdAt": "Wed Feb 18 2026 15:32:30 GMT+0300 (Москва, стандартное время)"
+      "createdAt": "Wed Feb 18 2026 15:32:30 GMT+0300 (Москва, стандартное время)",
+      "role": "user"
     },
     {
       "id": "e47e3009-2017-47e8-a001-d9124168a9a4",
       "name": "Егор Дедюля",
       "login": "Test",
       "password": "$2b$10$.8zzEtNAUpVMGieqU0zLYew/bs85Bag3hPK3cdBVLTww9bAvESXdm",
-      "createdAt": "26.02.2026"
+      "createdAt": "26.02.2026",
+      "role": "user"
     },
     {
       "id": "30bcda09-05e6-4006-98b3-1017d3582e0b",
       "name": "Имя",
       "login": "Логин",
       "password": "$2b$10$hhSyfRrFAZf008q6.J2CReTmaFEUTnDIa1j7TuoT7F0g3zgEME.De",
-      "createdAt": "11.03.2026"
+      "createdAt": "11.03.2026",
+      "role": "user"
     },
     {
       "id": "983a1949-57ac-4c03-a9d8-b02bd8a4f8b5",
       "name": "Имя2",
       "login": "Логин2",
       "password": "$2b$10$Qcs3c5o3ucBNLo7XfHZv2uNcW4aXJJpXkUGukAcbzzqrbDZU5XzUC",
-      "createdAt": "11.03.2026"
+      "createdAt": "11.03.2026",
+      "role": "user"
     },
     {
       "id": "10ee4be9-3b4f-4bd3-baa3-5aeda34d0f0b",
       "name": "Имя3",
       "login": "Логин3",
       "password": "$2b$10$.Cg9M5XJftNFmAAeaHlrae8NngozVg9lM0k5bbLMaimPpCimuZsO6",
-      "createdAt": "11.03.2026"
+      "createdAt": "11.03.2026",
+      "role": "user"
     },
     {
       "id": "245eb87d-7559-4979-823f-4cd0d86aead8",
       "name": "Имя11",
       "login": "Логин11",
       "password": "$2b$10$Dm6IBTbXlr/yGo8xI/tDT.dEbuy9xvtl7bBarNLgSxPpt82Os3Aoi",
-      "createdAt": "11.03.2026"
+      "createdAt": "11.03.2026",
+      "role": "user"
     },
     {
       "id": "095ae936-cf30-4366-bad5-7714024a4558",
       "name": "Имя13",
       "login": "Логин13",
       "password": "$2b$10$iWemN0A4Xmr8q7vJX9J9eOurNqTkLhZzIKp50x4ALDme9pH8cTXpq",
-      "createdAt": "11.03.2026"
+      "createdAt": "11.03.2026",
+      "role": "user"
     },
     {
       "id": "8a162809-1533-45a8-a0cb-1eb5748240d0",
       "name": "Имя15",
       "login": "Логин15",
       "password": "$2b$10$1KMFDHvh7iOMIr7cMLOEcuuMUjHSDiT09zvhdb4sxNH1zFNUIFaxK",
-      "createdAt": "11.03.2026"
+      "createdAt": "11.03.2026",
+      "role": "user"
     },
     {
       "id": "42aa47df-be3e-4942-9a29-0d832205a133",
       "name": "Имя17",
       "login": "Логин17",
       "password": "$2b$10$OKNW.d7tpcHkpFbwCmRuMuiAjlqZomHxUU7Aj0qrIHVdjViLIsXmu",
-      "createdAt": "12.03.2026"
+      "createdAt": "12.03.2026",
+      "role": "user"
     },
     {
       "id": "fdda1fee-0a98-47ac-a1d0-b8c82395759d",
       "name": "Имя19",
       "login": "Логин19",
       "password": "$2b$10$tHmoL2Ht9.SZlyrnP9a.iOgM/OKDNbgdgsOCXpFwk/yuaPyF.u/c.",
-      "createdAt": "12.03.2026"
+      "createdAt": "12.03.2026",
+      "role": "user"
     },
     {
       "id": "a8177e14-6e98-4846-bf52-080b67961882",
       "name": "Имя21",
       "login": "Логин21",
       "password": "$2b$10$BJj3bP3qhYKGjGj41cQSpe/Mm4r7Fn5FNydDPT7BaYsEI.f2tpaSm",
-      "createdAt": "12.03.2026"
+      "createdAt": "12.03.2026",
+      "role": "user"
+    },
+    {
+      "id": "70ae6161-56ff-4224-aded-c5c5ca6f0418",
+      "name": "Иван",
+      "login": "ADMIN",
+      "password": "$2b$10$i804o3RVQo8jZskHsJzMkOF8sr1y9qGRm1vMOT0utq16/rbh0eWb2",
+      "createdAt": "26.03.2026",
+      "role": "admin"
+    },
+    {
+      "id": "53cd4152-3b1c-4630-9f99-23758b923813",
+      "name": "Алексей",
+      "login": "TEST",
+      "password": "$2b$10$3DgncO9j6dJXDjI1wLvCbOQlDbFgu2.8JY1A1lH1Ita85cSZwMrf2",
+      "createdAt": "27.03.2026",
+      "role": "user"
     }
   ]
 }

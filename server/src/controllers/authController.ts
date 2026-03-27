@@ -62,8 +62,10 @@ export class AuthController {
                 login: login,
                 password: password
             }
-
             const user = await AuthService.login(verifyingUser);
+
+            const maxAge = user.role === 'admin' ? 30 * 60 * 1000 : 10 * 60 * 1000;
+            req.session.cookie.maxAge = maxAge;
             req.session.userId = user.id;
 
             res.status(200).json({

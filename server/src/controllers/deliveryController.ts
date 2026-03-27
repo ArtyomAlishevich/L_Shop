@@ -51,44 +51,44 @@ export class DeliveryController {
             const userId = req.session.userId;
             const { id } = req.params;
 
-            console.log('🔍 getById запрос:', { userId, id });
-            console.log('📌 Сессия:', req.session);
+            console.log('getById запрос:', { userId, id });
+            console.log('Сессия:', req.session);
 
             if (!userId) {
-                console.log('❌ Нет userId в сессии');
+                console.log('Нет userId в сессии');
                 res.status(401).json({ error: 'Не авторизован' });
                 return;
             }
 
             if (!id || Array.isArray(id)) {
-                console.log('❌ Некорректный ID:', id);
+                console.log('Некорректный ID:', id);
                 res.status(400).json({ error: 'Некорректный ID заказа' });
                 return;
             }
 
-            console.log('🔎 Ищем заказ с ID:', id);
+            console.log('Ищем заказ с ID:', id);
             const delivery = await DeliveryService.getById(id as string);
-            console.log('📦 Найден заказ:', delivery);
+            console.log('Найден заказ:', delivery);
 
             if (!delivery) {
-                console.log('❌ Заказ не найден');
+                console.log('Заказ не найден');
                 res.status(404).json({ error: 'Заказ не найден' });
                 return;
             }
 
-            console.log('👤 userId из заказа:', delivery.userId);
-            console.log('👤 userId из сессии:', userId);
+            console.log('userId из заказа:', delivery.userId);
+            console.log('userId из сессии:', userId);
 
             if (delivery.userId !== userId) {
-                console.log('❌ Доступ запрещен - другой пользователь');
+                console.log('Доступ запрещен - другой пользователь');
                 res.status(403).json({ error: 'Доступ запрещен' });
                 return;
             }
 
-            console.log('✅ Заказ найден и доступ разрешен');
+            console.log('Заказ найден и доступ разрешен');
             res.json({ data: delivery });
         } catch (error) {
-            console.error('❌ Ошибка получения заказа:', error);
+            console.error('Ошибка получения заказа:', error);
             res.status(500).json({ error: 'Ошибка получения заказа' });
         }
     }

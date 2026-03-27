@@ -9,7 +9,7 @@ import path from 'path';
 export class UsersDatabase {
     static getByLogin(login: string) : IUser | undefined {
         try {
-            return usersData.users.find(u => u.login === login);
+            return (usersData.users as IUser[]).find(u => u.login === login);
         } catch (error) {
             throw error;
         }
@@ -17,7 +17,7 @@ export class UsersDatabase {
 
     static getById(id: string) : IUser | undefined {
         try {
-            return usersData.users.find(u => u.id === id);
+            return (usersData.users as IUser[]).find(u => u.id === id);
         } catch (error) {
             throw error;
         }
@@ -33,7 +33,8 @@ export class UsersDatabase {
                 name: newUserData.name as string,
                 login: newUserData.login,
                 password: hashedPassword,
-                createdAt: new Date().toLocaleDateString('ru-RU')
+                createdAt: new Date().toLocaleDateString('ru-RU'),
+                role: 'user'
             }
             usersData.users.push(newUser);
             await fs.writeFile(path.join(__dirname, 'users.json'), JSON.stringify(usersData, null, 2));
