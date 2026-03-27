@@ -10,7 +10,7 @@
     {
       "id": "33e2ac42-7984-4505-bb2d-c59753f1be88",
       "userId": "e6654474-445e-4f71-9183-62171ea46e4f",
-      "sum": 250,
+      "sum": 0,
       "count": 1,
       "boardGames": [
         {
@@ -23,8 +23,8 @@
     {
       "id": "d34a7c0f-420f-466b-998d-3c9af75278ff",
       "userId": "1164af29-fd75-47fe-8d7d-64d4c40b8e42",
-      "sum": 240,
-      "count": 2,
+      "sum": 0,
+      "count": 1,
       "boardGames": [
         {
           "boardGameId": "1",
@@ -71,8 +71,8 @@
     {
       "id": "0863975d-cd3d-4971-aef4-55526d2efa9e",
       "userId": "095ae936-cf30-4366-bad5-7714024a4558",
-      "count": 19,
-      "sum": 4360,
+      "count": 2,
+      "sum": 0,
       "boardGames": [
         {
           "boardGameId": "1",
@@ -113,6 +113,42 @@
       "count": 0,
       "sum": 0,
       "boardGames": []
+    },
+    {
+      "id": "5618d364-1ea3-4851-8c96-75ae57ca4d1b",
+      "userId": "70ae6161-56ff-4224-aded-c5c5ca6f0418",
+      "count": 3,
+      "sum": 6890,
+      "boardGames": [
+        {
+          "boardGameId": "c8e46534-cfb1-413d-89c3-b388e8b712d3",
+          "count": 2,
+          "sum": 5000
+        },
+        {
+          "boardGameId": "fd4f54ac-764a-44a0-addc-dd8ddd388f22",
+          "count": 1,
+          "sum": 1890
+        }
+      ]
+    },
+    {
+      "id": "6649d346-4740-4cb5-b065-5055595d6e2d",
+      "userId": "53cd4152-3b1c-4630-9f99-23758b923813",
+      "count": 4,
+      "sum": 8780,
+      "boardGames": [
+        {
+          "boardGameId": "fd4f54ac-764a-44a0-addc-dd8ddd388f22",
+          "count": 2,
+          "sum": 3780
+        },
+        {
+          "boardGameId": "c8e46534-cfb1-413d-89c3-b388e8b712d3",
+          "count": 2,
+          "sum": 5000
+        }
+      ]
     }
   ]
 }
