@@ -23,15 +23,9 @@
     {
       "id": "d34a7c0f-420f-466b-998d-3c9af75278ff",
       "userId": "1164af29-fd75-47fe-8d7d-64d4c40b8e42",
-      "sum": 0,
-      "count": 1,
-      "boardGames": [
-        {
-          "boardGameId": "1",
-          "count": 2,
-          "sum": 240
-        }
-      ]
+      "sum": -240,
+      "count": -1,
+      "boardGames": []
     },
     {
       "id": "85876ef1-e966-4ecc-ae57-d0249f1b0087",
@@ -71,14 +65,9 @@
     {
       "id": "0863975d-cd3d-4971-aef4-55526d2efa9e",
       "userId": "095ae936-cf30-4366-bad5-7714024a4558",
-      "count": 2,
-      "sum": 0,
+      "count": -1,
+      "sum": -360,
       "boardGames": [
-        {
-          "boardGameId": "1",
-          "count": 3,
-          "sum": 360
-        },
         {
           "boardGameId": "2",
           "count": 16,
@@ -117,14 +106,9 @@
     {
       "id": "5618d364-1ea3-4851-8c96-75ae57ca4d1b",
       "userId": "70ae6161-56ff-4224-aded-c5c5ca6f0418",
-      "count": 3,
-      "sum": 6890,
+      "count": 1,
+      "sum": 1890,
       "boardGames": [
-        {
-          "boardGameId": "c8e46534-cfb1-413d-89c3-b388e8b712d3",
-          "count": 2,
-          "sum": 5000
-        },
         {
           "boardGameId": "fd4f54ac-764a-44a0-addc-dd8ddd388f22",
           "count": 1,
@@ -135,20 +119,29 @@
     {
       "id": "6649d346-4740-4cb5-b065-5055595d6e2d",
       "userId": "53cd4152-3b1c-4630-9f99-23758b923813",
-      "count": 4,
-      "sum": 8780,
+      "count": 2,
+      "sum": 3780,
       "boardGames": [
         {
           "boardGameId": "fd4f54ac-764a-44a0-addc-dd8ddd388f22",
           "count": 2,
           "sum": 3780
-        },
-        {
-          "boardGameId": "c8e46534-cfb1-413d-89c3-b388e8b712d3",
-          "count": 2,
-          "sum": 5000
         }
       ]
+    },
+    {
+      "id": "3e1efb18-ea2f-4db4-951d-8d146b07ceb0",
+      "userId": "5c14eaa1-4c00-4a30-9add-0d44dda0a946",
+      "count": 0,
+      "sum": 0,
+      "boardGames": []
+    }
+  ]
+}eb0",
+      "userId": "5c14eaa1-4c00-4a30-9add-0d44dda0a946",
+      "count": 0,
+      "sum": 0,
+      "boardGames": []
     }
   ]
 }

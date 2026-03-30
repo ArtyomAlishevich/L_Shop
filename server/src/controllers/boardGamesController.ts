@@ -179,7 +179,8 @@ export class BoardGamesController {
                     closestDate: game.delivery.closestDate,
                     price: game.delivery.price
                 } : undefined,
-                discount: game.discount
+                discount: game.discount,
+                averageRating: game.averageRating
             }));
 
             res.status(200).json({ data: localizedData });

@@ -13,7 +13,7 @@ export class BoardGamesDatabase {
         }
     }
 
-    static getById(id: string): IBoardGame | undefined {
+    static getById(id: string) : IBoardGame | undefined {
         try {
             return data.boardGames.find(game => game.id === id);
         } catch (error) {
@@ -21,11 +21,12 @@ export class BoardGamesDatabase {
         }
     }
 
-    static async create(boardGame: Omit<IBoardGame, 'id'>): Promise<IBoardGame> {
+    static async create(boardGame: Omit<IBoardGame, 'id' | 'averageRating'>): Promise<IBoardGame> {
         try {
             const newGame: IBoardGame = {
                 ...boardGame,
-                id: uuid.v4()
+                id: uuid.v4(),
+                averageRating: 0
             };
             (data.boardGames as IBoardGame[]).push(newGame);
             await fs.writeFile(path.join(__dirname, 'boardGames.json'), JSON.stringify(data, null, 2));
