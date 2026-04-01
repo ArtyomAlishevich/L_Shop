@@ -119,6 +119,14 @@
       "password": "$2b$10$3DgncO9j6dJXDjI1wLvCbOQlDbFgu2.8JY1A1lH1Ita85cSZwMrf2",
       "createdAt": "27.03.2026",
       "role": "user"
+    },
+    {
+      "id": "5c14eaa1-4c00-4a30-9add-0d44dda0a946",
+      "name": "Алексей",
+      "login": "USER",
+      "password": "$2b$10$qXsPMRDwJpI65GEw9XPilOZjtiHpVJ/pi2juSDE/S5NnsZ/TAxOJS",
+      "createdAt": "30.03.2026",
+      "role": "user"
     }
   ]
 }

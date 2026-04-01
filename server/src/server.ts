@@ -9,6 +9,8 @@ import localeRouter from './routers/localeRouter';
 import path from 'path';
 import cors from 'cors';
 import adminRouter from './routers/adminRouter';
+import commentRouter from './routers/commentRouter';
+import { CommentsController } from './controllers/commentsController';
 
 dotenv.config();
 const app: Application = express();
@@ -41,6 +43,8 @@ app.use('/api/baskets', basketsRouter);
 app.use('/api/delivery', deliveryRouter);
 app.use('/api/locale', localeRouter);
 app.use('/api/admin', adminRouter);
+app.get('/api/comments/:id', CommentsController.getByBoardGameId);
+app.use('/api/comments', commentRouter);
 
 app.listen(PORT, () => {
     console.log('Сервер запущен');

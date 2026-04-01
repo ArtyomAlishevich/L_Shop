@@ -3,6 +3,7 @@ import { BoardGamesDatabase } from '../../db/boardGamesDatabase';
 import { NotFoundError } from '../types/notFoundError';
 import { BasketsDatabase } from '../../db/basketsDatabase';
 import boardGamesRouter from '../routers/boardGamesRouter';
+import { CommentsDatabase } from '../../db/commentsDatabase';
 
 export class BoardGamesService {
     static getAll(): IBoardGame[] {
@@ -26,7 +27,7 @@ export class BoardGamesService {
         }
     }
 
-    static async create(boardGame: Omit<IBoardGame, 'id'>) : Promise<IBoardGame> {
+    static async create(boardGame: Omit<IBoardGame, 'id' | 'averageRating'>) : Promise<IBoardGame> {
         try {
             return await BoardGamesDatabase.create(boardGame);
         } catch (error) {
@@ -59,6 +60,11 @@ export class BoardGamesService {
             if (BasketsDatabase.existsGameInAnyBaskets(boardGameId)) {
                 await BasketsDatabase.deleteGameFromAllBaskets(boardGameId);
                 console.log(`Из корзин всех пользователей удалены все товары с id ${boardGameId}`);
+            }
+
+            if (CommentsDatabase.existsAnyCommentOnBoardGame(boardGameId)) {
+                await CommentsDatabase.deleteAllCommentsOnBoardGame(boardGameId);
+                console.log(`Удалены все комментарии на игру с id ${boardGameId}`);
             }
             await BoardGamesDatabase.delete(boardGameId);
         } catch (error) {

@@ -30,4 +30,5 @@ export interface IBoardGame {
         price: number;
     };
     discount?: number;
+    averageRating: number
 }
