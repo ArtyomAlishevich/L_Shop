@@ -24,7 +24,7 @@ export class UsersDatabase {
     }
 
     static async register(newUserData: IUserRequestDTO) : Promise<IUser> {
-        try {
+            try {
             const salt = await bcrypt.genSalt(10);
             const hashedPassword = await bcrypt.hash(newUserData.password, salt);
 
@@ -44,4 +44,12 @@ export class UsersDatabase {
             throw error;
         }
     }
+    static async updateLastVisit(userId: string): Promise<void> {
+    const users = usersData.users as IUser[];
+    const index = users.findIndex(u => u.id === userId);
+    if (index !== -1) {
+        users[index].lastVisit = new Date().toISOString();
+        await fs.writeFile(path.join(__dirname, 'users.json'), JSON.stringify(usersData, null, 2));
+    }
+}
 }

@@ -127,6 +127,23 @@
       "password": "$2b$10$qXsPMRDwJpI65GEw9XPilOZjtiHpVJ/pi2juSDE/S5NnsZ/TAxOJS",
       "createdAt": "30.03.2026",
       "role": "user"
+    },
+    {
+      "id": "01ac03e4-0021-414c-b842-f9d9a6174cb2",
+      "name": "Виктор нечай",
+      "login": "your_login",
+      "password": "$2b$10$6GZJNWLyxQu9pBT/oMGHlelvjB.GVig16z9qif3G10Gv.3hQNb9Wa",
+      "createdAt": "01.04.2026",
+      "role": "user",
+      "lastVisit": "2026-04-01T11:34:07.005Z"
+    },
+    {
+      "id": "40847e63-6885-49f5-a098-064bd5bb0918",
+      "name": "димка  нечай",
+      "login": "login",
+      "password": "$2b$10$24Vdx4pcZV5fWMnn10zKe.bA9AqPYVaArrJO0i3ejohYEwVmxwd8.",
+      "createdAt": "01.04.2026",
+      "role": "user"
     }
   ]
 }

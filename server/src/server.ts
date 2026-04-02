@@ -11,6 +11,8 @@ import cors from 'cors';
 import adminRouter from './routers/adminRouter';
 import commentRouter from './routers/commentRouter';
 import { CommentsController } from './controllers/commentsController';
+import recommendationRouter from './routers/recommendationRouter';
+import { activityMiddleware } from './middlewares/activityMiddleware';
 
 dotenv.config();
 const app: Application = express();
@@ -45,7 +47,8 @@ app.use('/api/locale', localeRouter);
 app.use('/api/admin', adminRouter);
 app.get('/api/comments/:id', CommentsController.getByBoardGameId);
 app.use('/api/comments', commentRouter);
-
+app.use('/api/recommendations', recommendationRouter);
+app.use(activityMiddleware);
 app.listen(PORT, () => {
     console.log('Сервер запущен');
 });

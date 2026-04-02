@@ -135,10 +135,17 @@
       "count": 0,
       "sum": 0,
       "boardGames": []
-    }
-  ]
-}eb0",
-      "userId": "5c14eaa1-4c00-4a30-9add-0d44dda0a946",
+    },
+    {
+      "id": "535be9fa-8d6f-4b64-b6fc-acc30c83e83a",
+      "userId": "01ac03e4-0021-414c-b842-f9d9a6174cb2",
+      "count": 0,
+      "sum": 0,
+      "boardGames": []
+    },
+    {
+      "id": "49d35cfa-a4bf-46f4-9e76-3d98ce6387f2",
+      "userId": "40847e63-6885-49f5-a098-064bd5bb0918",
       "count": 0,
       "sum": 0,
       "boardGames": []

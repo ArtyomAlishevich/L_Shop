@@ -1,0 +1,62 @@
+{
+  "usersCategories": [
+    {
+      "userId": "01ac03e4-0021-414c-b842-f9d9a6174cb2",
+      "categories": [
+        {
+          "category": "Стратегия",
+          "weight": 1,
+          "lastUpdated": "2026-04-01T11:36:09.410Z"
+        },
+        {
+          "category": "Тактическая",
+          "weight": 1,
+          "lastUpdated": "2026-04-01T11:36:09.410Z"
+        },
+        {
+          "category": "Психологическая",
+          "weight": 1,
+          "lastUpdated": "2026-04-01T11:34:18.094Z"
+        },
+        {
+          "category": "Для компании",
+          "weight": 2,
+          "lastUpdated": "2026-04-01T11:34:22.624Z"
+        },
+        {
+          "category": "Детектив",
+          "weight": 2,
+          "lastUpdated": "2026-04-01T11:34:22.624Z"
+        },
+        {
+          "category": "Логическая",
+          "weight": 1,
+          "lastUpdated": "2026-04-01T11:34:22.624Z"
+        },
+        {
+          "category": "Головоломка",
+          "weight": 1,
+          "lastUpdated": "2026-04-01T11:34:22.624Z"
+        }
+      ]
+    },
+    {
+      "userId": "40847e63-6885-49f5-a098-064bd5bb0918",
+      "likedGames": [
+        "2"
+      ],
+      "categories": [
+        {
+          "category": "Стратегия",
+          "weight": 1,
+          "lastUpdated": "2026-04-01T12:08:54.141Z"
+        },
+        {
+          "category": "Тактическая",
+          "weight": 1,
+          "lastUpdated": "2026-04-01T12:08:54.141Z"
+        }
+      ]
+    }
+  ]
+}

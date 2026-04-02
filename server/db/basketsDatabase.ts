@@ -9,8 +9,6 @@ import { IBasketBoardGame } from "../src/types/iBasketBoardGame";
 import { BoardGamesDatabase } from "./boardGamesDatabase";
 import boardGamesData from './boardGames.json';
 import { IBoardGame } from "../src/types/iBoardGame";
-
-
 export class BasketsDatabase {
     static get(userId: string) : IBasket | undefined {
         try {
