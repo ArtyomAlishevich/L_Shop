@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon --files --ignore '*.json' src/server.ts",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "build": "cd client && npm run build && cd ../server && npm run build"
   },
   "nodemonConfig": {
@@ -27,9 +27,14 @@
     "@types/bcryptjs": "^2.4.6",
     "@types/cors": "^2.8.19",
     "@types/express": "^5.0.6",
+    "@types/jest": "^30.0.0",
     "@types/node": "^25.5.0",
-    "@types/uuid": "^10.0.0",
+    "@types/supertest": "^7.2.0",
+    "@types/uuid": "^8.3.4",
+    "jest": "^30.3.0",
     "nodemon": "^3.1.11",
+    "supertest": "^7.2.2",
+    "ts-jest": "^29.4.9",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3"
   },
@@ -42,6 +47,6 @@
     "express": "^5.2.1",
     "express-session": "^1.19.0",
     "fs": "^0.0.1-security",
-    "uuid": "^13.0.0"
+    "uuid": "^8.3.2"
   }
 }

@@ -126,7 +126,8 @@
       "login": "USER",
       "password": "$2b$10$qXsPMRDwJpI65GEw9XPilOZjtiHpVJ/pi2juSDE/S5NnsZ/TAxOJS",
       "createdAt": "30.03.2026",
-      "role": "user"
+      "role": "user",
+      "lastVisit": "2026-04-05T14:44:21.845Z"
     },
     {
       "id": "01ac03e4-0021-414c-b842-f9d9a6174cb2",
@@ -143,6 +144,14 @@
       "login": "login",
       "password": "$2b$10$24Vdx4pcZV5fWMnn10zKe.bA9AqPYVaArrJO0i3ejohYEwVmxwd8.",
       "createdAt": "01.04.2026",
+      "role": "user"
+    },
+    {
+      "id": "39370063-9b0a-4126-a52a-09612cf3421a",
+      "name": "Алексей",
+      "login": "USERRRR",
+      "password": "$2b$10$wB8b7rNPj1yNNCHZlzYvHOeHiDoy7GMOZY0KkSgnxDpH0CgJIET8G",
+      "createdAt": "05.04.2026",
       "role": "user"
     }
   ]

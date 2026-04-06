@@ -11,8 +11,8 @@
     "skipLibCheck": false,
     "forceConsistentCasingInFileNames": true,
     "typeRoots": ["./node_modules/@types", "./src/types"],
-    "types": ["node"]
+    "types": ["node", "jest"]
   },
-  "include": ["src/**/*", "types/**/*", "db/**/*"],
+  "include": ["src/**/*", "types/**/*", "db/**/*", "tests/**/*"],
   "exclude": ["node_modules", "dist"]
 }
