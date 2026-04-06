@@ -16,7 +16,9 @@ export class LocaleController {
             if (locale && (locale === 'ru' || locale === 'en')) {
                 req.session.locale = locale;
                 res.status(200).json({ data: locale });
+                return;
             }
+            res.status(200).json({ data: locale });
         } catch (error) {
             console.log(`Ошибка при установке локализации пользователя: ${(error as Error).message}`);
             res.status(500).json(`Ошибка при установке локализации пользователя: ${(error as Error).message}`);

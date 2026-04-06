@@ -17,6 +17,7 @@ export class BasketsService {
             if (!basket) {
                 throw new NotFoundError(`У пользователя с id ${userId} не найдена корзина`);
             }
+            
             console.log(`Получена корзина для пользователя с id ${userId}`);
             return basket;
         } catch (error) {
