@@ -1,6 +1,6 @@
 import fs from 'fs/promises';
 import path from 'path';
-import uuid from 'uuid';
+import { v4 as uuidv4 } from 'uuid';
 import commentsData from './comments.json';
 import { IComment } from '../src/types/iComment';
 import { ICommentCreateDTO } from '../src/types/iCommentCreateDTO';
@@ -36,7 +36,7 @@ export class CommentsDatabase {
     static async add(commentData: ICommentCreateDTO, userId: string, userName: string) : Promise<IComment> {
         try {
             const newComment : IComment = {
-                id: uuid.v4(),
+                id: uuidv4(),
                 boardGameId: commentData.boardGameId,
                 userId: userId,
                 userName: userName,

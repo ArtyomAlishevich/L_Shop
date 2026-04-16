@@ -112,10 +112,13 @@ export class BoardGamesService {
                 }
             }
         }
+        const recIds = new Set(recommendedGames.map(g => g.id));
+        const filteredWithoutRec = filtered.filter(g => !recIds.has(g.id));
+
         const mixed: IBoardGame[] = [];
         let recIndex = 0;
-        for (let i = 0; i < filtered.length; i++) {
-            mixed.push(filtered[i]);
+        for (let i = 0; i < filteredWithoutRec.length; i++) {
+            mixed.push(filteredWithoutRec[i]);
             if ((i + 1) % 3 === 0 && recIndex < recommendedGames.length) {
                 mixed.push(recommendedGames[recIndex]);
                 recIndex++;

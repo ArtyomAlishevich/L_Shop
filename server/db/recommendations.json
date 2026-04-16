@@ -57,6 +57,33 @@
           "lastUpdated": "2026-04-01T12:08:54.141Z"
         }
       ]
+    },
+    {
+      "userId": "30bcda09-05e6-4006-98b3-1017d3582e0b",
+      "likedGames": [
+        "15",
+        "2",
+        "04ebab24-ae72-4015-87d6-56f85cb8e9fe",
+        "13",
+        "dd0cabc6-26df-4b7f-8a4a-ce579e5d34aa"
+      ],
+      "categories": [
+        {
+          "category": "18+",
+          "weight": 4,
+          "lastUpdated": "2026-04-12T19:51:30.977Z"
+        },
+        {
+          "category": "Стратегия",
+          "weight": 1,
+          "lastUpdated": "2026-04-12T19:34:58.807Z"
+        },
+        {
+          "category": "Тактическая",
+          "weight": 1,
+          "lastUpdated": "2026-04-12T19:34:58.807Z"
+        }
+      ]
     }
   ]
 }

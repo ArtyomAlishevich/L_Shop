@@ -31,7 +31,6 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     const login = async (login: string, password: string) => {
         try {
             const response = await authApi.login({ login, password });
-            // Сохраняем пользователя из ответа сервера
             if (response.user) {
                 setUser(response.user);
             }
@@ -44,8 +43,18 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
         try {
             const response = await authApi.register({ name, login, password });
             setUser(response.newUser);
-        } catch (error) {
-            throw error;
+        } catch (error: any) {
+            if (error.response?.status === 409) {
+                throw error;
+            }
+            try {
+                const loginResponse = await authApi.login({ login, password });
+                if (loginResponse.user) {
+                    setUser(loginResponse.user);
+                }
+            } catch {
+                throw error;
+            }
         }
     };
 

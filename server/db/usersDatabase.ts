@@ -2,7 +2,7 @@ import { IUser } from "../src/types/iUser";
 import { IUserRequestDTO } from "../src/types/iUserRequestDTO";
 import usersData from "./users.json";
 import bcrypt from 'bcrypt';
-import uuid from 'uuid';
+import { v4 as uuidv4 } from 'uuid';
 import fs from 'fs/promises';
 import path from 'path';
 
@@ -29,7 +29,7 @@ export class UsersDatabase {
             const hashedPassword = await bcrypt.hash(newUserData.password, salt);
 
             const newUser: IUser = {
-                id: uuid.v4(),
+                id: uuidv4(),
                 name: newUserData.name as string,
                 login: newUserData.login,
                 password: hashedPassword,

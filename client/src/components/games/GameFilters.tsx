@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { GamesQueryParams } from '../../api/boardGames';
+import { useLocale } from '../../context/LocaleContext';
 import './GameFilters.css';
 
 interface GameFiltersProps {
@@ -7,6 +8,7 @@ interface GameFiltersProps {
 }
 
 export const GameFilters: React.FC<GameFiltersProps> = ({ onFilterChange }) => {
+    const { t } = useLocale();
     const [search, setSearch] = useState('');
     const [category, setCategory] = useState('');
     const [minPrice, setMinPrice] = useState('');
@@ -19,7 +21,6 @@ export const GameFilters: React.FC<GameFiltersProps> = ({ onFilterChange }) => {
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         const params: GamesQueryParams = {};
-
         if (search) params.search = search;
         if (category) params.category = category;
         if (minPrice) params.minPrice = minPrice;
@@ -28,109 +29,72 @@ export const GameFilters: React.FC<GameFiltersProps> = ({ onFilterChange }) => {
         if (maxPlayers) params.maxPlayers = maxPlayers;
         if (sort) params.sort = sort;
         if (isAvailable) params.isAvailable = isAvailable;
-
         onFilterChange(params);
     };
 
     const handleReset = () => {
-        setSearch('');
-        setCategory('');
-        setMinPrice('');
-        setMaxPrice('');
-        setMinPlayers('');
-        setMaxPlayers('');
-        setSort('');
-        setIsAvailable('');
+        setSearch(''); setCategory(''); setMinPrice(''); setMaxPrice('');
+        setMinPlayers(''); setMaxPlayers(''); setSort(''); setIsAvailable('');
         onFilterChange({});
     };
 
     return (
         <form onSubmit={handleSubmit} className="filters-form">
-            <h3>Фильтры</h3>
+            <h3>{t.filters.title}</h3>
 
             <div className="filter-group">
-                <label>Поиск</label>
-                <input
-                    type="text"
-                    value={search}
-                    onChange={(e) => setSearch(e.target.value)}
-                    placeholder="Название игры"
-                />
+                <label>{t.filters.search}</label>
+                <input type="text" value={search} onChange={(e) => setSearch(e.target.value)} placeholder={t.filters.searchPlaceholder} />
             </div>
 
             <div className="filter-group">
-                <label>Категория</label>
-                <input
-                    type="text"
-                    value={category}
-                    onChange={(e) => setCategory(e.target.value)}
-                    placeholder="Например: стратегия"
-                />
+                <label>{t.filters.category}</label>
+                <input type="text" value={category} onChange={(e) => setCategory(e.target.value)} placeholder={t.filters.categoryPlaceholder} />
             </div>
 
             <div className="filter-row">
                 <div className="filter-group">
-                    <label>Цена от</label>
-                    <input
-                        type="number"
-                        value={minPrice}
-                        onChange={(e) => setMinPrice(e.target.value)}
-                        placeholder="0"
-                    />
+                    <label>{t.filters.priceFrom}</label>
+                    <input type="number" value={minPrice} onChange={(e) => setMinPrice(e.target.value)} placeholder="0" />
                 </div>
                 <div className="filter-group">
-                    <label>до</label>
-                    <input
-                        type="number"
-                        value={maxPrice}
-                        onChange={(e) => setMaxPrice(e.target.value)}
-                        placeholder="500"
-                    />
+                    <label>{t.filters.priceTo}</label>
+                    <input type="number" value={maxPrice} onChange={(e) => setMaxPrice(e.target.value)} placeholder="500" />
                 </div>
             </div>
 
             <div className="filter-row">
                 <div className="filter-group">
-                    <label>Игроков от</label>
-                    <input
-                        type="number"
-                        value={minPlayers}
-                        onChange={(e) => setMinPlayers(e.target.value)}
-                        placeholder="1"
-                    />
+                    <label>{t.filters.playersFrom}</label>
+                    <input type="number" value={minPlayers} onChange={(e) => setMinPlayers(e.target.value)} placeholder="1" />
                 </div>
                 <div className="filter-group">
-                    <label>до</label>
-                    <input
-                        type="number"
-                        value={maxPlayers}
-                        onChange={(e) => setMaxPlayers(e.target.value)}
-                        placeholder="10"
-                    />
+                    <label>{t.filters.playersTo}</label>
+                    <input type="number" value={maxPlayers} onChange={(e) => setMaxPlayers(e.target.value)} placeholder="10" />
                 </div>
             </div>
 
             <div className="filter-group">
-                <label>Сортировка</label>
+                <label>{t.filters.sort}</label>
                 <select value={sort} onChange={(e) => setSort(e.target.value as 'asc' | 'desc' | '')}>
-                    <option value="">Без сортировки</option>
-                    <option value="asc">По возрастанию цены</option>
-                    <option value="desc">По убыванию цены</option>
+                    <option value="">{t.filters.sortNone}</option>
+                    <option value="asc">{t.filters.sortAsc}</option>
+                    <option value="desc">{t.filters.sortDesc}</option>
                 </select>
             </div>
 
             <div className="filter-group">
-                <label>Наличие</label>
+                <label>{t.filters.availability}</label>
                 <select value={isAvailable} onChange={(e) => setIsAvailable(e.target.value)}>
-                    <option value="">Все</option>
-                    <option value="true">В наличии</option>
-                    <option value="false">Нет в наличии</option>
+                    <option value="">{t.filters.availabilityAll}</option>
+                    <option value="true">{t.filters.availabilityIn}</option>
+                    <option value="false">{t.filters.availabilityOut}</option>
                 </select>
             </div>
 
             <div className="filter-actions">
-                <button type="submit" className="apply-filters">Применить</button>
-                <button type="button" onClick={handleReset} className="reset-filters">Сбросить</button>
+                <button type="submit" className="apply-filters">{t.filters.apply}</button>
+                <button type="button" onClick={handleReset} className="reset-filters">{t.filters.reset}</button>
             </div>
         </form>
     );

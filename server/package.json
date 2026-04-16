@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon --files --ignore '*.json' src/server.ts",
+    "start": "nodemon --exec \"npx ts-node --transpile-only\" --ignore '*.json' src/server.ts",
     "test": "jest",
     "build": "cd client && npm run build && cd ../server && npm run build"
   },

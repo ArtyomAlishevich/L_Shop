@@ -1,7 +1,7 @@
 import { IBasket } from "../src/types/iBasket";
 import { IUser } from "../src/types/iUser";
 import basketsData from '../db/baskets.json';
-import uuid from 'uuid';
+import { v4 as uuidv4 } from 'uuid';
 import fs from 'fs/promises';
 import path from "path";
 import { NotFoundError } from "../src/types/notFoundError";
@@ -21,7 +21,7 @@ export class BasketsDatabase {
     static async create(user: IUser) : Promise<void> {
         try {
             const newUserBasket : IBasket = {
-                id: uuid.v4(),
+                id: uuidv4(),
                 userId: user.id,
                 count: 0,
                 sum: 0,
@@ -189,7 +189,7 @@ export class BasketsDatabase {
 
     static async updateSumAfterGamePriceChanging(boardGameId: string, newPrice: number) : Promise<void> {
         try {
-            const oldBoardGamePrice = boardGamesData.boardGames.find((g: IBoardGame) => g.id === boardGameId)?.price;
+            const oldBoardGamePrice = boardGamesData.boardGames.find((g: any) => g.id === boardGameId)?.price;
             if (oldBoardGamePrice && oldBoardGamePrice !== newPrice) {
                 basketsData.baskets.forEach((b: IBasket) => {
                     let priceChangingBoardGameIndex = b.boardGames.findIndex(g => g.boardGameId === boardGameId);

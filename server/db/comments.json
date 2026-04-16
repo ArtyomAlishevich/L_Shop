@@ -8,6 +8,51 @@
       "text": "Норм",
       "rating": 4,
       "createdAt": "30.03.2026"
+    },
+    {
+      "id": "cf40491a-ad08-4e26-82b4-530bb94f609d",
+      "boardGameId": "dd0cabc6-26df-4b7f-8a4a-ce579e5d34aa",
+      "userId": "30bcda09-05e6-4006-98b3-1017d3582e0b",
+      "userName": "Имя",
+      "text": "РЕАЛ",
+      "rating": 5,
+      "createdAt": "08.04.2026"
+    },
+    {
+      "id": "512553bf-e577-447f-b5ea-6db756b73b37",
+      "boardGameId": "dd0cabc6-26df-4b7f-8a4a-ce579e5d34aa",
+      "userId": "983a1949-57ac-4c03-a9d8-b02bd8a4f8b5",
+      "userName": "Имя2",
+      "text": "РеАлЬнО оБдАлБаЛо",
+      "rating": 4,
+      "createdAt": "08.04.2026"
+    },
+    {
+      "id": "5754b947-ff79-4448-9620-86955f631beb",
+      "boardGameId": "04ebab24-ae72-4015-87d6-56f85cb8e9fe",
+      "userId": "30bcda09-05e6-4006-98b3-1017d3582e0b",
+      "userName": "Имя",
+      "text": "Отзыв",
+      "rating": 5,
+      "createdAt": "09.04.2026"
+    },
+    {
+      "id": "e259a721-a4a5-4e75-8a23-e19da7e5bcb6",
+      "boardGameId": "04ebab24-ae72-4015-87d6-56f85cb8e9fe",
+      "userId": "983a1949-57ac-4c03-a9d8-b02bd8a4f8b5",
+      "userName": "Имя2",
+      "text": "Отзыв",
+      "rating": 1,
+      "createdAt": "09.04.2026"
+    },
+    {
+      "id": "6d10a27a-9388-4513-b29e-974da5033c10",
+      "boardGameId": "04ebab24-ae72-4015-87d6-56f85cb8e9fe",
+      "userId": "10ee4be9-3b4f-4bd3-baa3-5aeda34d0f0b",
+      "userName": "Имя3",
+      "text": "Отзыв",
+      "rating": 3,
+      "createdAt": "09.04.2026"
     }
   ]
 }

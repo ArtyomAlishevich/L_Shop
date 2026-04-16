@@ -25,14 +25,14 @@ export class AuthService {
         try {
             const verifyingUser = UsersDatabase.getByLogin(userData.login);
             if (!verifyingUser) {
-                console.log(`Не найден пользователль с логином ${userData.login}`);
                 throw new UnauthorizedError();
             }
 
             if (!await bcrypt.compare(userData.password, verifyingUser.password)) {
-                console.log(`У пользователя с логином ${userData.login} не совпали пароли`);           
                 throw new UnauthorizedError();
             }
+
+            await UsersDatabase.updateLastVisit(verifyingUser.id);
 
             return verifyingUser;
         } catch (error) {

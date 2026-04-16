@@ -1,4 +1,4 @@
-import uuid from 'uuid';
+import { v4 as uuidv4 } from 'uuid';
 import { IBoardGame } from '../src/types/iBoardGame';
 import data from './boardGames.json';
 import fs from 'fs/promises';
@@ -25,7 +25,7 @@ export class BoardGamesDatabase {
         try {
             const newGame: IBoardGame = {
                 ...boardGame,
-                id: uuid.v4(),
+                id: uuidv4(),
                 averageRating: 0
             };
             (data.boardGames as IBoardGame[]).push(newGame);

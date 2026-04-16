@@ -7,7 +7,6 @@ export const deliveryApi = {
         return response.data.data;
     },
 
-    // ✅ ДОБАВЬТЕ ЭТОТ МЕТОД
     getById: async (id: string) => {
         const response = await apiClient.get<ApiResponse<IDelivery>>(`/delivery/${id}`);
         return response.data.data;

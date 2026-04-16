@@ -39,7 +39,6 @@ app.use(express.json());
 
 app.use('/api/boardgames', boardGamesRouter);
 app.use('/images', express.static(path.join(__dirname, '../db/images')));
-app.use('/api/boardGames', boardGamesRouter);
 app.use('/api/auth', authRouter);
 app.use('/api/baskets', basketsRouter);
 app.use('/api/delivery', deliveryRouter);

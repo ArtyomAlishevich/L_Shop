@@ -38,7 +38,8 @@
       "login": "Логин",
       "password": "$2b$10$hhSyfRrFAZf008q6.J2CReTmaFEUTnDIa1j7TuoT7F0g3zgEME.De",
       "createdAt": "11.03.2026",
-      "role": "user"
+      "role": "admin",
+      "lastVisit": "2026-04-13T06:13:58.324Z"
     },
     {
       "id": "983a1949-57ac-4c03-a9d8-b02bd8a4f8b5",
@@ -153,6 +154,98 @@
       "password": "$2b$10$wB8b7rNPj1yNNCHZlzYvHOeHiDoy7GMOZY0KkSgnxDpH0CgJIET8G",
       "createdAt": "05.04.2026",
       "role": "user"
+    },
+    {
+      "id": "501a2df7-6145-4f61-a4b2-7795885ea6d3",
+      "name": "Пользователь",
+      "login": "Пользователь",
+      "password": "$2b$10$VVySVU0/FwbrtIPMsy54tucuONym/Z/pi2EFIlRR5p8urB2v4B.hu",
+      "createdAt": "09.04.2026",
+      "role": "user"
+    },
+    {
+      "id": "765239d1-25fb-459c-b58a-0dca45814c40",
+      "name": "F",
+      "login": "F",
+      "password": "$2b$10$s0IU468sA7WX/mN3xELeAOG6iguLOLkj7si/sD22COrMvjDrrSeAm",
+      "createdAt": "09.04.2026",
+      "role": "user"
+    },
+    {
+      "id": "ae9d25db-ab69-41ae-a2f5-36f9a4a18126",
+      "name": "Names",
+      "login": "Names",
+      "password": "$2b$10$5v9d0969ZoSOWxMESAYrUekb7wokly8Dm56/nSMxYAMRNweL9MplO",
+      "createdAt": "12.04.2026",
+      "role": "user"
+    },
+    {
+      "id": "8da4d6f4-8fe8-44ae-b6db-666e16a60ddd",
+      "name": "Names1",
+      "login": "Names1",
+      "password": "$2b$10$UVtfj1HncaKSf6iEOEmLHeJmdSUORjnRU8KvO2qV3zJdeOjDT8Vum",
+      "createdAt": "12.04.2026",
+      "role": "user"
+    },
+    {
+      "id": "988ee92e-60db-4676-837f-ea406628a081",
+      "name": "Names11",
+      "login": "Names11",
+      "password": "$2b$10$mTlIlDwxLH.VzIYZ4sHHWOiW1qpXel7wMAjdoKgWOybM0MYIuuY/e",
+      "createdAt": "12.04.2026",
+      "role": "user"
+    },
+    {
+      "id": "5c2c9907-6476-492d-9143-d1a4b391b695",
+      "name": "Names111",
+      "login": "Names111",
+      "password": "$2b$10$onJHgT3kgptyqPZYaqsBPu0k1ctKLBKsU5gPi4sholi9HPufyuU4G",
+      "createdAt": "12.04.2026",
+      "role": "user"
+    },
+    {
+      "id": "fb408962-4edd-470e-8b45-c95f5ab4ff6e",
+      "name": "Names1111",
+      "login": "Names1111",
+      "password": "$2b$10$hZuOPsxqDu8CwsdpuCxwMeHIwzft93G1eVXucUjh44YduWQiZqxQC",
+      "createdAt": "12.04.2026",
+      "role": "user"
+    },
+    {
+      "id": "1e91a6db-9f68-41b3-9611-6bc3f2970740",
+      "name": "Names11111",
+      "login": "Names11111",
+      "password": "$2b$10$wtC/S8FkTs4DoJvBY91nguxt9BFY6yWTSGWTVGXPHjmaAtkj3.x86",
+      "createdAt": "12.04.2026",
+      "role": "user",
+      "lastVisit": "2026-04-12T19:45:29.312Z"
+    },
+    {
+      "id": "62ea527b-3b7a-4dfc-b566-58d966a3d324",
+      "name": "Names111111",
+      "login": "Names111111",
+      "password": "$2b$10$fDxtUiqA8GZlxKDP9nFAnu5Z23vVFdrWYXX8drhdKiIUE/5ze6DtC",
+      "createdAt": "12.04.2026",
+      "role": "user",
+      "lastVisit": "2026-04-12T19:50:00.678Z"
+    },
+    {
+      "id": "1893b97a-a9cc-4f99-9aa0-e84c9346833f",
+      "name": "A",
+      "login": "A",
+      "password": "$2b$10$TyMzY7WVo9Jw2KVgCtPsNOGX1Bw1NXjPfZ9TMgHM5D1Ril7NRJk4e",
+      "createdAt": "12.04.2026",
+      "role": "user",
+      "lastVisit": "2026-04-12T19:50:21.415Z"
+    },
+    {
+      "id": "eb7c594d-43a3-4ea6-a5fc-d1540a4d8036",
+      "name": "Ad",
+      "login": "df",
+      "password": "$2b$10$nPxzPFCMAQ.BJaU8ViW2BOvZhPL3cCA/ng3WYorvZKzhVTypJdf0O",
+      "createdAt": "13.04.2026",
+      "role": "user",
+      "lastVisit": "2026-04-13T05:45:33.483Z"
     }
   ]
 }
