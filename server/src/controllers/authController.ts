@@ -4,6 +4,7 @@ import { DuplicateError } from "../types/duplicateError";
 import { IUserRequestDTO } from "../types/iUserRequestDTO";
 import { UnauthorizedError } from "../types/unauthorizedError";
 import { IUserResponseDTO } from "../types/iUserResponse";
+import { UsersDatabase } from "../../db/usersDatabase";
 
 export class AuthController {
     static async register(req: Request, res: Response) : Promise<void> {
@@ -29,9 +30,10 @@ export class AuthController {
                 login: user.login,
                 id: user.id,
                 createdAt: user.createdAt,
-                name: user.name
+                name: user.name,
+                role: user.role
             }
-            req.session.userId = user.id;
+            (req.session as any).userId = user.id;
             res.status(201).json({ newUser: newUser });
         }
         catch (error) {
@@ -62,16 +64,19 @@ export class AuthController {
                 login: login,
                 password: password
             }
-
             const user = await AuthService.login(verifyingUser);
-            req.session.userId = user.id;
+
+            const maxAge = user.role === 'admin' ? 30 * 60 * 1000 : 10 * 60 * 1000;
+            req.session.cookie.maxAge = maxAge;
+            (req.session as any).userId = user.id;
 
             res.status(200).json({
                 user: {
                     id: user.id,
                     login: user.login,
                     name: user.name,
-                    createdAt: user.createdAt
+                    createdAt: user.createdAt,
+                    role: user.role
                 }
             });
         } catch (error) {
@@ -85,9 +90,37 @@ export class AuthController {
         }
     }
 
+    static async me(req: Request, res: Response) : Promise<void> {
+        try {
+            const userId = (req.session as any).userId;
+            if (!userId) {
+                res.status(401).json({ error: 'Не авторизован' });
+                return;
+            }
+
+            const user = UsersDatabase.getById(userId);
+            if (!user) {
+                res.status(401).json({ error: 'Пользователь не найден' });
+                return;
+            }
+
+            res.status(200).json({
+                user: {
+                    id: user.id,
+                    login: user.login,
+                    name: user.name,
+                    createdAt: user.createdAt,
+                    role: user.role
+                }
+            });
+        } catch (error) {
+            res.status(500).json({ error: (error as Error).message });
+        }
+    }
+
     static logout(req: Request, res: Response) : void {
         try {
-            const userId = req.session?.userId;
+            const userId = (req.session as any).userId;
             req.session.destroy((err) => {
                 if (err) {
                     console.log(`Ошибка уничтожении сессии при выходе из системы: ${err}`);

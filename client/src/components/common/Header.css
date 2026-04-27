@@ -61,3 +61,21 @@
     padding: 2px 6px;
     font-size: 0.75rem;
 }
+
+
+
+.locale-btn {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    color: inherit;
+    padding: 0.3rem 0.7rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    margin-left: 0.5rem;
+    transition: background 0.2s;
+}
+
+.locale-btn:hover {
+    background: rgba(255, 255, 255, 0.15);
+}

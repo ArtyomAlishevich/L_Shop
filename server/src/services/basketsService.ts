@@ -1,4 +1,5 @@
 import { BasketsDatabase } from "../../db/basketsDatabase";
+import { BoardGamesDatabase } from "../../db/boardGamesDatabase";
 import { UsersDatabase } from "../../db/usersDatabase";
 import { DuplicateError } from "../types/duplicateError";
 import { IBasket } from "../types/iBasket";
@@ -16,6 +17,7 @@ export class BasketsService {
             if (!basket) {
                 throw new NotFoundError(`У пользователя с id ${userId} не найдена корзина`);
             }
+            
             console.log(`Получена корзина для пользователя с id ${userId}`);
             return basket;
         } catch (error) {
@@ -69,6 +71,11 @@ export class BasketsService {
 
     static async add(boardGameId: string, userId: string) : Promise<IBasket> {
         try {
+            const boardGame = BoardGamesDatabase.getById(boardGameId);
+            if (!boardGame) {
+                throw new NotFoundError(`Не найдена настольная игра ${boardGameId}`);
+            }
+
             if (!UsersDatabase.getById(userId)) {
                 throw new NotFoundError(`Не найден пользователь с id ${userId}`);
             }
@@ -82,6 +89,11 @@ export class BasketsService {
 
     static async remove(boardGameId: string, userId: string) : Promise<IBasket> {
         try {
+            const boardGame = BoardGamesDatabase.getById(boardGameId);
+            if (!boardGame) {
+                throw new NotFoundError(`Не найдена настольная игра ${boardGameId}`);
+            }
+
             if (!UsersDatabase.getById(userId)) {
                 throw new NotFoundError(`Не найден пользователь с id ${userId}`);
             }
@@ -108,6 +120,11 @@ export class BasketsService {
 
     static async removeAllSimilar(userId: string, boardGameId: string) : Promise<IBasket> {
         try {
+            const boardGame = BoardGamesDatabase.getById(boardGameId);
+            if (!boardGame) {
+                throw new NotFoundError(`Не найдена настольная игра ${boardGameId}`);
+            }
+
             if (!UsersDatabase.getById(userId)) {
                 throw new NotFoundError(`Не найден пользователь с id ${userId}`);
             }

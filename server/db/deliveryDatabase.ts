@@ -32,7 +32,6 @@ export class DeliveryDatabase {
         }
     }
 
-    // ✅ НОВЫЙ МЕТОД
     static async getById(id: string): Promise<IDelivery | undefined> {
         try {
             return typedDeliveriesData.deliveries.find(d => d.id === id);

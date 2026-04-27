@@ -2,14 +2,14 @@ import { IUser } from "../src/types/iUser";
 import { IUserRequestDTO } from "../src/types/iUserRequestDTO";
 import usersData from "./users.json";
 import bcrypt from 'bcrypt';
-import uuid from 'uuid';
+import { v4 as uuidv4 } from 'uuid';
 import fs from 'fs/promises';
 import path from 'path';
 
 export class UsersDatabase {
     static getByLogin(login: string) : IUser | undefined {
         try {
-            return usersData.users.find(u => u.login === login);
+            return (usersData.users as IUser[]).find(u => u.login === login);
         } catch (error) {
             throw error;
         }
@@ -17,23 +17,24 @@ export class UsersDatabase {
 
     static getById(id: string) : IUser | undefined {
         try {
-            return usersData.users.find(u => u.id === id);
+            return (usersData.users as IUser[]).find(u => u.id === id);
         } catch (error) {
             throw error;
         }
     }
 
     static async register(newUserData: IUserRequestDTO) : Promise<IUser> {
-        try {
+            try {
             const salt = await bcrypt.genSalt(10);
             const hashedPassword = await bcrypt.hash(newUserData.password, salt);
 
             const newUser: IUser = {
-                id: uuid.v4(),
+                id: uuidv4(),
                 name: newUserData.name as string,
                 login: newUserData.login,
                 password: hashedPassword,
-                createdAt: new Date().toLocaleDateString('ru-RU')
+                createdAt: new Date().toLocaleDateString('ru-RU'),
+                role: 'user'
             }
             usersData.users.push(newUser);
             await fs.writeFile(path.join(__dirname, 'users.json'), JSON.stringify(usersData, null, 2));
@@ -43,4 +44,12 @@ export class UsersDatabase {
             throw error;
         }
     }
+    static async updateLastVisit(userId: string): Promise<void> {
+    const users = usersData.users as IUser[];
+    const index = users.findIndex(u => u.id === userId);
+    if (index !== -1) {
+        users[index].lastVisit = new Date().toISOString();
+        await fs.writeFile(path.join(__dirname, 'users.json'), JSON.stringify(usersData, null, 2));
+    }
+}
 }

@@ -1,13 +1,14 @@
 import { IBasket } from "../src/types/iBasket";
 import { IUser } from "../src/types/iUser";
 import basketsData from '../db/baskets.json';
-import uuid from 'uuid';
+import { v4 as uuidv4 } from 'uuid';
 import fs from 'fs/promises';
 import path from "path";
 import { NotFoundError } from "../src/types/notFoundError";
 import { IBasketBoardGame } from "../src/types/iBasketBoardGame";
 import { BoardGamesDatabase } from "./boardGamesDatabase";
-
+import boardGamesData from './boardGames.json';
+import { IBoardGame } from "../src/types/iBoardGame";
 export class BasketsDatabase {
     static get(userId: string) : IBasket | undefined {
         try {
@@ -20,7 +21,7 @@ export class BasketsDatabase {
     static async create(user: IUser) : Promise<void> {
         try {
             const newUserBasket : IBasket = {
-                id: uuid.v4(),
+                id: uuidv4(),
                 userId: user.id,
                 count: 0,
                 sum: 0,
@@ -54,11 +55,7 @@ export class BasketsDatabase {
 
     static async add(boardGameId: string, userId: string) : Promise<IBasket> {
         try {
-            const boardGame = BoardGamesDatabase.getById(boardGameId);
-            if (!boardGame) {
-                throw new NotFoundError(`Не найдена настольная игра с id ${boardGameId}`);
-            }
-
+            const boardGame = BoardGamesDatabase.getById(boardGameId)!;
             const basketIndex = basketsData.baskets.findIndex((item: IBasket) => item.userId === userId);
             if (basketIndex === -1) {
                 throw new NotFoundError(`Не найдена корзина у пользователя с id ${userId}`);
@@ -93,11 +90,7 @@ export class BasketsDatabase {
 
     static async remove(boardGameId: string, userId: string) : Promise<IBasket> {
         try {
-            const boardGame = BoardGamesDatabase.getById(boardGameId);
-            if (!boardGame) {
-                throw new NotFoundError(`Не найдена настольная игра с id ${boardGameId}`);
-            }
-            
+            const boardGame = BoardGamesDatabase.getById(boardGameId)!;
             const basketIndex = basketsData.baskets.findIndex((item: IBasket) => item.userId === userId);
             if (basketIndex === -1) {
                 throw new NotFoundError(`Не найдена корзина у пользователя с id ${userId}`);
@@ -150,11 +143,6 @@ export class BasketsDatabase {
 
     static async removeAllSimilar(userId: string, boardGameId: string) : Promise<IBasket> {
         try {
-            const boardGame = BoardGamesDatabase.getById(boardGameId);
-            if (!boardGame) {
-                throw new NotFoundError(`Не найдена настольная игра ${boardGameId}`);
-            }
-
             const basketIndex = basketsData.baskets.findIndex((item: IBasket) => item.userId === userId);
             if (basketIndex === -1) {
                 throw new NotFoundError(`Не найдена корзина у пользователя с id ${userId}`);
@@ -173,6 +161,48 @@ export class BasketsDatabase {
             await fs.writeFile(path.join(__dirname, 'baskets.json'), JSON.stringify(basketsData, null, 2));
             console.log(`У пользователя с id ${userId} удалены все настольные игры с id ${boardGameId} из корзины`);
             return basket;
+        } catch (error) {
+            throw error;
+        }
+    }
+
+    static async deleteGameFromAllBaskets(boardGameId: string) : Promise<void> {
+        try {
+            basketsData.baskets.forEach((b: IBasket) => {
+                if (b.boardGames.some((g: IBasketBoardGame) => g.boardGameId === boardGameId)) {
+                    this.removeAllSimilar(b.userId, boardGameId);
+                }
+            });
+            await fs.writeFile(path.join(__dirname, 'baskets.json'), JSON.stringify(basketsData, null, 2));
+        } catch (error) {
+            throw error;
+        }
+    }
+
+    static existsGameInAnyBaskets(boardGameId: string) : boolean {
+        try {
+            return basketsData.baskets.some(b => b.boardGames.some(g => g.boardGameId === boardGameId));
+        } catch (error) {
+            throw error;
+        }
+    }
+
+    static async updateSumAfterGamePriceChanging(boardGameId: string, newPrice: number) : Promise<void> {
+        try {
+            const oldBoardGamePrice = boardGamesData.boardGames.find((g: any) => g.id === boardGameId)?.price;
+            if (oldBoardGamePrice && oldBoardGamePrice !== newPrice) {
+                basketsData.baskets.forEach((b: IBasket) => {
+                    let priceChangingBoardGameIndex = b.boardGames.findIndex(g => g.boardGameId === boardGameId);
+                    if (priceChangingBoardGameIndex !== -1) {
+                        const oldGameSum = b.boardGames[priceChangingBoardGameIndex].count * oldBoardGamePrice;
+                        const newGameSum = b.boardGames[priceChangingBoardGameIndex].count * newPrice;
+                        b.sum -= oldGameSum;
+                        b.sum += newGameSum;
+                        b.boardGames[priceChangingBoardGameIndex].sum = newGameSum;
+                    }
+                });
+                await fs.writeFile(path.join(__dirname, 'baskets.json'), JSON.stringify(basketsData, null, 2));
+            }
         } catch (error) {
             throw error;
         }

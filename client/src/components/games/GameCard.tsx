@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { IBoardGame } from '../../types';
 import { useBasket } from '../../hooks/useBasket';
 import { useAuth } from '../../hooks/useAuth';
+import { useLocale } from '../../context/LocaleContext';
 import './GameCard.css';
 
 interface GameCardProps {
@@ -12,18 +13,19 @@ interface GameCardProps {
 export const GameCard: React.FC<GameCardProps> = ({ game }) => {
     const { addToBasket } = useBasket();
     const { isAuthenticated } = useAuth();
+    const { t } = useLocale();
 
     const handleAddToBasket = async (e: React.MouseEvent) => {
         e.preventDefault();
         if (!isAuthenticated) {
-            alert('Необходимо войти в систему');
+            alert(t.card.loginRequired);
             return;
         }
         try {
             await addToBasket(game.id);
-            alert('Игра добавлена в корзину');
+            alert(t.card.addedToBasket);
         } catch (error) {
-            alert('Ошибка при добавлении в корзину');
+            alert(t.card.addError);
         }
     };
 
@@ -35,11 +37,7 @@ export const GameCard: React.FC<GameCardProps> = ({ game }) => {
         <div className="game-card">
             <Link to={`/game/${game.id}`} className="game-link">
                 {game.images?.preview && (
-                    <img
-                        src={game.images.preview}
-                        alt={game.name}
-                        className="game-image"
-                    />
+                    <img src={game.images.preview} alt={game.name} className="game-image" />
                 )}
                 <h3 className="game-title">{game.name}</h3>
                 <div className="game-categories">
@@ -48,7 +46,7 @@ export const GameCard: React.FC<GameCardProps> = ({ game }) => {
                     ))}
                 </div>
                 <div className="game-players">
-                    👥 {game.minPlayers}-{game.maxPlayers} игроков
+                    👥 {game.minPlayers}-{game.maxPlayers} {t.card.players}
                 </div>
                 <div className="game-price">
                     {discountedPrice ? (
@@ -67,7 +65,7 @@ export const GameCard: React.FC<GameCardProps> = ({ game }) => {
                 className="add-to-basket-btn"
                 disabled={!game.isAvailable}
             >
-                {game.isAvailable ? 'В корзину' : 'Нет в наличии'}
+                {game.isAvailable ? t.card.addToBasket : t.card.outOfStock}
             </button>
         </div>
     );

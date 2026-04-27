@@ -1,16 +1,18 @@
 import { useState, useEffect } from 'react';
 import { IBoardGame } from '../types';
 import { boardGamesApi, GamesQueryParams } from '../api/boardGames';
+import { useLocale } from '../context/LocaleContext';
 
 export const useBoardGames = (initialParams?: GamesQueryParams) => {
     const [games, setGames] = useState<IBoardGame[]>([]);
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
     const [params, setParams] = useState<GamesQueryParams>(initialParams || {});
+    const { locale } = useLocale();
 
     useEffect(() => {
         fetchGames();
-    }, [params]);
+    }, [params, locale]);
 
     const fetchGames = async () => {
         setIsLoading(true);

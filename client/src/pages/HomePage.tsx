@@ -1,36 +1,39 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useLocale } from '../context/LocaleContext';
 import './HomePage.css';
 
 export const HomePage: React.FC = () => {
+    const { t } = useLocale();
+
     return (
         <div className="home-page">
             <section className="hero">
-                <h1>Добро пожаловать в магазин настольных игр!</h1>
-                <p>Откройте для себя мир увлекательных настольных игр</p>
+                <h1>{t.home.heroTitle}</h1>
+                <p>{t.home.heroSubtitle}</p>
                 <Link to="/games" className="cta-button">
-                    Перейти к играм
+                    {t.home.heroButton}
                 </Link>
             </section>
 
             <section className="features">
-                <h2>Почему выбирают нас?</h2>
+                <h2>{t.home.featuresTitle}</h2>
                 <div className="features-grid">
                     <div className="feature">
-                        <h3>🃏 Большой выбор</h3>
-                        <p>Более 1000 настольных игр разных жанров</p>
+                        <h3>{t.home.feature1Title}</h3>
+                        <p>{t.home.feature1Text}</p>
                     </div>
                     <div className="feature">
-                        <h3>🚀 Быстрая доставка</h3>
-                        <p>Доставка по всей Беларуси за 3-7 дней</p>
+                        <h3>{t.home.feature2Title}</h3>
+                        <p>{t.home.feature2Text}</p>
                     </div>
                     <div className="feature">
-                        <h3>💰 Лучшие цены</h3>
-                        <p>Регулярные скидки и акции</p>
+                        <h3>{t.home.feature3Title}</h3>
+                        <p>{t.home.feature3Text}</p>
                     </div>
                     <div className="feature">
-                        <h3>⭐ Гарантия качества</h3>
-                        <p>Только оригинальные игры</p>
+                        <h3>{t.home.feature4Title}</h3>
+                        <p>{t.home.feature4Text}</p>
                     </div>
                 </div>
             </section>

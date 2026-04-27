@@ -5,7 +5,7 @@ import { BoardGamesDatabase } from '../../db/boardGamesDatabase';
 import { IDelivery, IDeliveryItem } from '../types/iDelivery';
 import { IDeliveryRequestDTO } from '../types/iDeliveryRequestDTO';
 import { NotFoundError } from '../types/notFoundError';
-import uuid from 'uuid';
+import { v4 as uuidv4 } from 'uuid';
 
 export class DeliveryService {
     static async create(userId: string, data: IDeliveryRequestDTO): Promise<IDelivery> {
@@ -55,7 +55,7 @@ export class DeliveryService {
             const totalOrderSum = totalSum + totalDeliverySum;
 
             const delivery: IDelivery = {
-                id: uuid.v4(),
+                id: uuidv4(),
                 userId,
                 contact: {
                     phone: data.phone,

@@ -8,6 +8,11 @@ import deliveryRouter from './routers/deliveryRouter';
 import localeRouter from './routers/localeRouter';
 import path from 'path';
 import cors from 'cors';
+import adminRouter from './routers/adminRouter';
+import commentRouter from './routers/commentRouter';
+import { CommentsController } from './controllers/commentsController';
+import recommendationRouter from './routers/recommendationRouter';
+import { activityMiddleware } from './middlewares/activityMiddleware';
 
 dotenv.config();
 const app: Application = express();
@@ -34,12 +39,15 @@ app.use(express.json());
 
 app.use('/api/boardgames', boardGamesRouter);
 app.use('/images', express.static(path.join(__dirname, '../db/images')));
-app.use('/api/boardGames', boardGamesRouter);
 app.use('/api/auth', authRouter);
 app.use('/api/baskets', basketsRouter);
 app.use('/api/delivery', deliveryRouter);
 app.use('/api/locale', localeRouter);
-
+app.use('/api/admin', adminRouter);
+app.get('/api/comments/:id', CommentsController.getByBoardGameId);
+app.use('/api/comments', commentRouter);
+app.use('/api/recommendations', recommendationRouter);
+app.use(activityMiddleware);
 app.listen(PORT, () => {
     console.log('Сервер запущен');
 });

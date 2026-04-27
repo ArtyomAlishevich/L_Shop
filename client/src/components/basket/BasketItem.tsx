@@ -1,6 +1,7 @@
 import React from 'react';
 import { IBasketBoardGame } from '../../types';
 import { useBasket } from '../../hooks/useBasket';
+import { useLocale } from '../../context/LocaleContext';
 import './BasketItem.css';
 
 interface BasketItemProps {
@@ -11,12 +12,13 @@ interface BasketItemProps {
 
 export const BasketItem: React.FC<BasketItemProps> = ({ item, gameName, gamePrice }) => {
     const { removeFromBasket, addToBasket, removeAllSimilar } = useBasket();
+    const { t } = useLocale();
 
     const handleIncrement = async () => {
         try {
             await addToBasket(item.boardGameId);
         } catch (error) {
-            alert('Ошибка при добавлении товара');
+            alert(t.basketItem.incrementError);
         }
     };
 
@@ -24,16 +26,16 @@ export const BasketItem: React.FC<BasketItemProps> = ({ item, gameName, gamePric
         try {
             await removeFromBasket(item.boardGameId);
         } catch (error) {
-            alert('Ошибка при удалении товара');
+            alert(t.basketItem.decrementError);
         }
     };
 
     const handleRemoveAll = async () => {
-        if (window.confirm('Удалить все экземпляры этой игры из корзины?')) {
+        if (window.confirm(t.basketItem.removeConfirm)) {
             try {
                 await removeAllSimilar(item.boardGameId);
             } catch (error) {
-                alert('Ошибка при удалении товаров');
+                alert(t.basketItem.removeError);
             }
         }
     };
@@ -42,7 +44,7 @@ export const BasketItem: React.FC<BasketItemProps> = ({ item, gameName, gamePric
         <div className="basket-item">
             <div className="item-info">
                 <h4 className="item-name">{gameName}</h4>
-                <div className="item-price">{gamePrice} ₽ за шт.</div>
+                <div className="item-price">{gamePrice} {t.basketItem.perItem}</div>
             </div>
 
             <div className="item-controls">
@@ -53,11 +55,11 @@ export const BasketItem: React.FC<BasketItemProps> = ({ item, gameName, gamePric
                 </div>
 
                 <div className="item-sum">
-                    Сумма: {item.sum} ₽
+                    {t.basketItem.itemSum} {item.sum} ₽
                 </div>
 
                 <button onClick={handleRemoveAll} className="remove-btn">
-                    Удалить все
+                    {t.basketItem.removeAll}
                 </button>
             </div>
         </div>
